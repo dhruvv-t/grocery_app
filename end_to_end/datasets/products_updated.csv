@@ -1,0 +1,453 @@
+product_id,product_name,resistant,vitality_days,category_id,reorder_levels,stock_quantity,cost_price,selling_price,seasonal_flag,demand_score,category_name,margin_percentage,lead_time_days
+1,Flour - Whole Wheat,Durable,321,7,400.0,644,8.9,10.6,False,92,Grains & Cereals,9.57,13
+2,Cookie Chocolate Chip With,Weak,68,2,300.0,2688,22.4,30.6,False,84,Bakery & Pastries,33.67,2
+3,Onions - Cippolini,Weak,302,16,200.0,4368,17.3,18.8,False,91,Vegetables,12.95,1
+4,"Sauce - Gravy, Au Jus, Mix",Durable,245,4,250.0,684,14.1,17.3,False,36,Condiments & Sauces,24.16,9
+5,Artichokes - Jerusalem,Weak,305,16,150.0,2520,3.8,4.0,False,56,Vegetables,12.95,3
+6,Wine - Magnotta - Cab Sauv,Durable,447,1,120.0,1161,3.8,4.6,False,43,Alcoholic Beverages,18.11,14
+7,Table Cloth - 53x69 Colour,Unknown,190,9,200.0,1496,1.5,1.6,False,34,Non-Food Items,24.23,5
+8,Halibut - Steaks,Weak,296,12,180.0,1260,20.4,22.3,False,84,Seafood,34.19,1
+9,Rabbit - Whole,Moderate,77,8,80.0,1116,14.2,15.5,False,31,Meat & Poultry,31.39,4
+10,Scampi Tail,Weak,99,12,150.0,3640,16.7,21.3,False,91,Seafood,34.19,1
+11,Garbage Bags - Clear,Unknown,80,9,300.0,1850,0.6,0.8,False,50,Non-Food Items,24.23,7
+12,Ezy Change Mophandle,Unknown,284,9,50.0,1400,22.8,28.6,False,50,Non-Food Items,24.23,5
+13,"Water, Tap",Durable,341,3,1000.0,1677,19.6,27.2,False,39,Beverages (Non-Alcoholic),27.76,9
+14,Beef - Top Sirloin,Moderate,67,8,250.0,3306,5.1,6.0,False,87,Meat & Poultry,31.39,7
+15,"Spoon - Soup, Plastic",Unknown,159,9,1000.0,2176,4.4,5.0,False,68,Non-Food Items,24.23,10
+16,Kellogs Special K Cereal,Durable,116,7,300.0,1394,4.4,6.0,True,34,Grains & Cereals,9.57,10
+17,"Wine - White, Mosel Gold",Durable,477,1,,1034,7.2,8.2,False,94,Alcoholic Beverages,18.11,9
+18,"Lamb - Whole, Fresh",Moderate,73,8,100.0,336,12.4,17.2,False,42,Meat & Poultry,31.39,6
+19,Tea - Earl Grey,Durable,61,3,350.0,3362,10.2,10.8,False,82,Beverages (Non-Alcoholic),27.76,14
+20,Chocolate - Feathers,Durable,352,13,200.0,370,6.9,9.6,False,74,Snacks & Confectionery,30.48,13
+21,Kiwi,Weak,100,6,200.0,305,14.4,15.4,False,61,Fruits,12.21,3
+22,Rice - Jasmine Sented,Durable,170,7,350.0,2160,3.4,4.6,True,90,Grains & Cereals,9.57,12
+23,Crab - Imitation Flakes,Weak,73,12,250.0,2047,7.0,8.6,False,89,Seafood,34.19,1
+24,"Beer - Alexander Kieths, Pale Ale",Durable,290,1,400.0,1320,8.7,12.2,False,40,Alcoholic Beverages,18.11,11
+25,Soupcontfoam16oz 116con,Unknown,143,9,1000.0,1288,10.8,11.6,False,92,Non-Food Items,24.23,7
+26,Squid U5 - Thailand,Weak,189,12,120.0,1100,18.5,23.0,False,50,Seafood,34.19,1
+27,Chocolate - Compound Coating,Durable,290,13,200.0,2592,4.8,6.7,True,81,Snacks & Confectionery,30.48,12
+28,Sobe - Tropical Energy,Durable,204,3,250.0,3276,12.2,15.0,False,84,Beverages (Non-Alcoholic),27.76,13
+29,Spinach - Baby,Weak,87,16,300.0,2585,14.0,17.8,False,55,Vegetables,12.95,3
+30,"Cheese - Brie, Triple Creme",Moderate,125,5,100.0,3395,1.2,1.6,False,97,Dairy,12.21,4
+31,Yeast Dry - Fermipan,Durable,222,10,200.0,1953,14.3,17.3,True,63,Pantry Staples,27.12,14
+32,Lettuce - Treviso,Weak,288,16,150.0,1215,4.1,5.2,False,81,Vegetables,12.95,2
+33,Beans - Wax,Durable,320,7,200.0,3402,1.6,2.1,True,81,Grains & Cereals,9.57,14
+34,Mustard Prepared,Durable,223,4,300.0,522,22.3,30.5,False,58,Condiments & Sauces,24.16,9
+35,"Water - Mineral, Natural",Durable,360,3,350.0,804,22.7,24.2,True,67,Beverages (Non-Alcoholic),27.76,10
+36,Table Cloth 54x72 White,Unknown,362,9,250.0,2698,19.0,21.9,False,71,Non-Food Items,24.23,8
+37,"Nut - Pistachio, Shelled",Durable,346,10,200.0,800,7.2,10.0,False,50,Pantry Staples,27.12,8
+38,Sage - Ground,Durable,69,15,120.0,2982,2.4,3.3,False,71,Spices & Seasonings,12.91,13
+39,Dried Figs,Weak,254,6,150.0,210,16.1,19.5,False,42,Fruits,12.21,3
+40,Cocktail Napkin Blue,Unknown,177,9,500.0,3255,10.4,13.2,False,93,Non-Food Items,24.23,8
+41,"Cup - 6oz, Foam",Unknown,329,9,1000.0,368,3.0,3.4,True,46,Non-Food Items,24.23,7
+42,Bread - Raisin Walnut Oval,Weak,4,2,200.0,4704,11.7,13.1,True,96,Bakery & Pastries,33.67,1
+43,Sponge Cake Mix - Chocolate,Weak,152,2,200.0,630,0.9,1.1,True,70,Bakery & Pastries,33.67,2
+44,"Wine - White, Colubia Cresh",Durable,540,1,120.0,1020,21.4,25.1,False,30,Alcoholic Beverages,18.11,14
+45,Beef - Ground Medium,Moderate,316,8,400.0,868,6.2,7.7,False,31,Meat & Poultry,31.39,5
+46,Lambcasing,Durable,192,10,120.0,623,15.6,16.8,False,89,Pantry Staples,27.12,14
+47,"Thyme - Lemon, Fresh",Durable,335,15,150.0,1155,7.4,10.3,False,77,Spices & Seasonings,12.91,14
+48,Pecan Raisin - Tarts,Weak,692,2,200.0,2842,12.3,17.2,False,58,Bakery & Pastries,33.67,2
+49,Bacardi Breezer - Tropical,Durable,123,1,250.0,312,12.9,16.7,True,39,Alcoholic Beverages,18.11,8
+50,Pork - Kidney,Moderate,343,8,100.0,2610,4.4,5.5,False,87,Meat & Poultry,31.39,4
+51,Wine - Crozes Hermitage E.,Durable,300,1,100.0,2759,22.8,26.4,False,89,Alcoholic Beverages,18.11,8
+52,"Turnip - White, Organic",Weak,166,16,150.0,2350,18.3,24.4,False,50,Vegetables,12.95,3
+53,Cassis,Durable,234,1,120.0,1767,22.1,28.5,False,57,Alcoholic Beverages,18.11,8
+54,"Liners - Banana, Paper",Unknown,263,9,400.0,2898,21.1,23.3,True,63,Non-Food Items,24.23,8
+55,Cinnamon Buns Sticky,Weak,224,2,300.0,370,14.1,19.3,True,37,Bakery & Pastries,33.67,3
+56,Chips Potato Salt Vinegar 43g,Durable,364,13,400.0,1672,21.7,29.0,False,88,Snacks & Confectionery,30.48,9
+57,Sausage - Breakfast,Moderate,179,8,350.0,2652,2.2,3.0,True,78,Meat & Poultry,31.39,4
+58,Dc Hikiage Hira Huba,Weak,103,12,100.0,2116,4.7,6.1,False,46,Seafood,34.19,1
+59,Pastry - Butterscotch Baked,Weak,215,2,200.0,3649,1.2,1.5,True,89,Bakery & Pastries,33.67,3
+60,"Pepper - Paprika, Hungarian",Durable,266,15,150.0,3034,7.7,9.3,False,74,Spices & Seasonings,12.91,13
+61,Sardines,Weak,167,12,150.0,4508,9.2,12.7,False,98,Seafood,34.19,2
+62,Pears - Bosc,Weak,310,6,250.0,2501,6.5,8.8,False,61,Fruits,12.21,3
+63,Cake - Mini Cheesecake,Weak,189,2,250.0,2847,19.5,20.8,False,73,Bakery & Pastries,33.67,2
+64,Vinegar - Sherry,Durable,352,4,150.0,2538,8.5,9.0,False,94,Condiments & Sauces,24.16,10
+65,Brandy - Bar,Durable,79,1,200.0,370,6.7,7.9,False,37,Alcoholic Beverages,18.11,8
+66,Pie Filling - Cherry,Durable,341,4,200.0,576,12.8,17.1,False,72,Condiments & Sauces,24.16,14
+67,Wine - Sogrape Mateus Rose,Durable,180,1,120.0,660,3.4,4.8,False,30,Alcoholic Beverages,18.11,11
+68,"Beets - Candy Cane, Organic",Weak,298,16,120.0,1040,18.9,20.8,False,80,Vegetables,12.95,1
+69,Raspberries - Fresh,Weak,94,6,200.0,1749,1.9,2.3,False,53,Fruits,12.21,1
+70,Squid - Tubes / Tenticles 10/20,Weak,257,12,150.0,901,23.2,27.5,True,53,Seafood,34.19,3
+71,Cheese - Wine,Moderate,664,5,150.0,966,18.2,25.3,True,46,Dairy,12.21,7
+72,Bar - Granola Trail Mix Fruit Nut,Durable,7,13,350.0,3528,4.8,6.4,False,72,Snacks & Confectionery,30.48,14
+73,Appetizer - Sausage Rolls,Moderate,118,11,250.0,1764,0.2,0.3,False,49,Prepared Foods,8.56,7
+74,Carbonated Water - Cherry,Durable,220,3,300.0,1300,19.2,23.3,True,50,Beverages (Non-Alcoholic),27.76,8
+75,Chef Hat 20cm,Unknown,238,9,250.0,696,16.7,19.9,False,87,Non-Food Items,24.23,7
+76,Wine - Fume Blanc Fetzer,Durable,385,1,120.0,540,17.2,19.7,False,60,Alcoholic Beverages,18.11,11
+77,Potatoes - Idaho 100 Count,Weak,71,16,500.0,1640,18.2,19.4,False,40,Vegetables,12.95,2
+78,Wine - Magnotta - Belpaese,Durable,669,1,100.0,3645,1.9,2.5,False,81,Alcoholic Beverages,18.11,13
+79,"Pasta - Penne, Rigate, Dry",Durable,335,7,350.0,748,8.5,11.4,True,44,Grains & Cereals,9.57,10
+80,Wasabi Powder,Durable,240,15,100.0,1368,2.8,4.0,True,36,Spices & Seasonings,12.91,12
+81,Cookies - Assorted,Weak,117,2,300.0,4214,20.3,28.4,False,86,Bakery & Pastries,33.67,1
+82,Jolt Cola - Electric Blue,Durable,310,3,250.0,2080,14.7,18.3,False,80,Beverages (Non-Alcoholic),27.76,11
+83,Lamb - Ground,Moderate,358,8,200.0,2349,7.9,10.4,False,87,Meat & Poultry,31.39,4
+84,Peas - Frozen,Weak,185,16,300.0,238,1.6,2.2,False,34,Vegetables,12.95,3
+85,Cheese - Parmesan Cubes,Moderate,276,5,250.0,1564,7.4,10.0,True,34,Dairy,12.21,7
+86,Longos - Grilled Chicken With,Unknown,344,9,200.0,1406,7.7,8.8,False,37,Non-Food Items,24.23,10
+87,Wine - Pinot Noir Latour,Durable,364,1,100.0,3348,17.2,20.8,False,93,Alcoholic Beverages,18.11,10
+88,Remy Red,Durable,98,1,150.0,1911,15.0,16.5,False,39,Alcoholic Beverages,18.11,9
+89,"Beef - Ground, Extra Lean, Fresh",Moderate,282,8,350.0,1675,20.9,28.9,False,67,Meat & Poultry,31.39,4
+90,Flavouring - Orange,Durable,243,10,120.0,1776,11.2,14.1,False,37,Pantry Staples,27.12,9
+91,General Purpose Trigger,Unknown,237,9,200.0,1350,2.9,3.3,False,54,Non-Food Items,24.23,7
+92,"Wine - Red, Colio Cabernet",Durable,607,1,150.0,4560,16.8,21.6,True,95,Alcoholic Beverages,18.11,10
+93,Bandage - Fexible 1x3,Unknown,353,9,200.0,1185,17.9,22.7,False,79,Non-Food Items,24.23,9
+94,V8 - Berry Blend,Durable,210,3,300.0,4128,13.3,15.6,True,96,Beverages (Non-Alcoholic),27.76,13
+95,Beans - Kidney White,Durable,185,7,300.0,624,18.2,19.8,False,78,Grains & Cereals,9.57,11
+96,Cheese - Bocconcini,Moderate,360,5,200.0,325,11.7,15.0,False,65,Dairy,12.21,6
+97,Veal - Inside,Moderate,293,8,150.0,3104,12.4,15.2,True,97,Meat & Poultry,31.39,5
+98,Shrimp - 31/40,Weak,67,12,250.0,1960,10.1,13.4,False,70,Seafood,34.19,3
+99,Mustard - Seed,Durable,188,4,150.0,3549,0.7,0.9,False,91,Condiments & Sauces,24.16,11
+100,"Pork - Loin, Bone - In",Moderate,323,8,250.0,663,2.6,3.6,False,39,Meat & Poultry,31.39,6
+101,"Soup - Campbells, Lentil",Unknown,216,14,250.0,1900,0.9,1.1,False,50,Soups,13.73,6
+102,"Rosemary - Primerba, Paste",Durable,64,15,150.0,975,15.0,18.7,False,65,Spices & Seasonings,12.91,9
+103,Cream Of Tartar,Durable,145,10,120.0,1640,7.5,10.1,False,41,Pantry Staples,27.12,10
+104,Tia Maria,Durable,234,1,150.0,651,12.0,14.3,False,31,Alcoholic Beverages,18.11,10
+105,Ecolab - Mikroklene 4/4 L,Unknown,349,9,100.0,1638,21.4,23.4,True,42,Non-Food Items,24.23,10
+106,Pickerel - Fillets,Weak,252,12,150.0,1804,6.0,6.3,False,82,Seafood,34.19,2
+107,Bread - French Baquette,Weak,9,2,400.0,3872,9.7,12.8,True,88,Bakery & Pastries,33.67,3
+108,Pasta - Orecchiette,Durable,178,7,200.0,1170,17.8,22.6,False,45,Grains & Cereals,9.57,13
+109,Muffin - Zero Transfat,Weak,277,2,300.0,1708,5.5,7.1,False,61,Bakery & Pastries,33.67,2
+110,Black Currants,Weak,173,6,150.0,1403,1.9,2.2,True,61,Fruits,12.21,3
+111,Scallops 60/80 Iqf,Weak,204,12,200.0,1640,6.9,7.6,False,40,Seafood,34.19,1
+112,Browning Caramel Glace,Durable,85,4,150.0,1677,3.9,4.1,False,39,Condiments & Sauces,24.16,13
+113,Ocean Spray - Kiwi Strawberry,Durable,195,3,300.0,1100,21.9,25.7,True,44,Beverages (Non-Alcoholic),27.76,14
+114,Veal - Osso Bucco,Moderate,362,8,100.0,552,19.0,23.9,False,46,Meat & Poultry,31.39,6
+115,Ocean Spray - Ruby Red,Durable,291,3,300.0,2208,14.9,17.7,False,69,Beverages (Non-Alcoholic),27.76,10
+116,Steam Pan - Half Size Deep,Unknown,135,9,150.0,423,20.5,24.7,True,47,Non-Food Items,24.23,6
+117,Ketchup - Tomato,Durable,361,4,400.0,1764,18.9,25.9,False,84,Condiments & Sauces,24.16,11
+118,Garbag Bags - Black,Unknown,348,9,300.0,2214,4.5,5.3,False,54,Non-Food Items,24.23,9
+119,Soup Campbells - Italian Wedding,Unknown,60,14,250.0,3520,21.0,25.8,False,88,Soups,13.73,7
+120,Water - Spring Water 500ml,Durable,206,3,500.0,1173,12.7,16.9,False,51,Beverages (Non-Alcoholic),27.76,13
+121,Muffin Batt - Blueberry Passion,Weak,346,2,200.0,1829,19.0,22.6,False,59,Bakery & Pastries,33.67,1
+122,Table Cloth 62x114 White,Unknown,201,9,200.0,2774,21.1,26.7,False,73,Non-Food Items,24.23,10
+123,Oil - Shortening - All - Purpose,Durable,112,10,300.0,915,7.6,10.2,False,61,Pantry Staples,27.12,13
+124,Macaroons - Two Bite Choc,Weak,363,2,250.0,3920,2.7,3.7,False,80,Bakery & Pastries,33.67,3
+125,"Nut - Chestnuts, Whole",Durable,128,10,200.0,1200,5.5,6.0,False,75,Pantry Staples,27.12,14
+126,Crackers - Trio,Weak,149,2,250.0,1250,10.1,13.9,False,50,Bakery & Pastries,33.67,3
+127,Island Oasis - Mango Daiquiri,Durable,279,3,200.0,915,19.3,23.6,True,61,Beverages (Non-Alcoholic),27.76,13
+128,Coffee - Irish Cream,Durable,251,3,250.0,2924,20.3,23.1,False,68,Beverages (Non-Alcoholic),27.76,10
+129,Chicken - Soup Base,Moderate,122,8,250.0,1312,0.3,0.3,True,41,Meat & Poultry,31.39,6
+130,Beef Wellington,Moderate,132,8,100.0,684,12.1,16.8,True,76,Meat & Poultry,31.39,4
+131,Anchovy Paste - 56 G Tube,Weak,220,12,120.0,987,9.9,12.1,True,47,Seafood,34.19,1
+132,Beer - Blue,Durable,228,1,300.0,1200,5.3,6.2,False,50,Alcoholic Beverages,18.11,10
+133,Beef - Top Sirloin - Aaa,Moderate,148,8,200.0,1890,2.9,3.7,False,42,Meat & Poultry,31.39,7
+134,Wine - Toasted Head,Durable,338,1,100.0,800,8.0,9.1,False,50,Alcoholic Beverages,18.11,12
+135,Wiberg Super Cure,Durable,157,4,100.0,370,22.2,23.9,True,37,Condiments & Sauces,24.16,10
+136,Vol Au Vents,Weak,161,2,150.0,1575,7.7,8.4,False,75,Bakery & Pastries,33.67,2
+137,"Wine - White, Schroder And Schyl",Durable,673,1,100.0,828,12.3,13.4,False,36,Alcoholic Beverages,18.11,12
+138,"Rum - Coconut, Malibu",Durable,191,1,250.0,1560,16.6,18.3,False,52,Alcoholic Beverages,18.11,13
+139,Chicken - Wieners,Moderate,161,8,300.0,2448,8.6,9.5,False,51,Meat & Poultry,31.39,6
+140,"Oregano - Dry, Rubbed",Durable,78,15,150.0,2448,22.9,29.1,False,51,Spices & Seasonings,12.91,14
+141,Tea - Herbal Sweet Dreams,Durable,141,3,200.0,2088,22.7,25.2,False,58,Beverages (Non-Alcoholic),27.76,14
+142,"Pork - Bacon, Double Smoked",Moderate,338,8,400.0,420,6.0,7.0,False,42,Meat & Poultry,31.39,4
+143,Watercress,Weak,188,16,120.0,1240,11.8,16.0,True,31,Vegetables,12.95,2
+144,"Placemat - Scallop, White",Unknown,148,9,500.0,2436,7.2,8.7,True,58,Non-Food Items,24.23,6
+145,Wine - Chardonnay South,Durable,244,1,150.0,1215,6.8,8.7,False,81,Alcoholic Beverages,18.11,11
+146,Bananas,Weak,135,6,500.0,2072,1.0,1.1,True,56,Fruits,12.21,1
+147,Cheese - Mozzarella,Moderate,258,5,400.0,2212,14.4,16.1,False,79,Dairy,12.21,5
+148,Beer - Sleemans Cream Ale,Durable,202,1,300.0,1404,11.9,12.7,False,52,Alcoholic Beverages,18.11,9
+149,Zucchini - Yellow,Weak,152,16,250.0,1387,1.3,1.5,False,73,Vegetables,12.95,3
+150,Langers - Ruby Red Grapfruit,Durable,3,3,250.0,2387,6.6,7.6,False,77,Beverages (Non-Alcoholic),27.76,9
+151,"Mushrooms - Black, Dried",Weak,364,16,120.0,1080,21.4,23.8,False,72,Vegetables,12.95,3
+152,"Lentils - Red, Dry",Durable,283,7,250.0,1386,5.7,6.2,False,66,Grains & Cereals,9.57,10
+153,Arizona - Green Tea,Durable,350,3,400.0,1620,3.5,3.8,False,90,Beverages (Non-Alcoholic),27.76,13
+154,Ice Cream Bar - Drumstick,Durable,161,13,350.0,2635,11.6,14.0,False,85,Snacks & Confectionery,30.48,14
+155,"Peas - Pigeon, Dry",Weak,326,16,200.0,704,23.2,26.0,False,32,Vegetables,12.95,2
+156,Sprouts - Alfalfa,Weak,169,16,200.0,2944,5.8,6.8,False,92,Vegetables,12.95,1
+157,"Juice - Cranberry, 341 Ml",Durable,324,3,350.0,384,15.9,19.4,False,48,Beverages (Non-Alcoholic),27.76,12
+158,Apricots Fresh,Weak,62,6,200.0,572,17.9,23.2,False,52,Fruits,12.21,3
+159,Eggplant - Asian,Weak,144,16,200.0,3920,5.7,6.0,False,80,Vegetables,12.95,3
+160,Beef Ground Medium,Moderate,341,8,400.0,2301,17.2,22.8,False,59,Meat & Poultry,31.39,5
+161,Longos - Chicken Wings,Unknown,363,9,250.0,884,8.7,11.1,False,68,Non-Food Items,24.23,8
+162,Sauce - Demi Glace,Durable,176,4,200.0,648,14.9,16.1,False,54,Condiments & Sauces,24.16,11
+163,Tomatoes Tear Drop,Weak,280,16,250.0,1813,14.9,20.3,True,37,Vegetables,12.95,1
+164,Loquat,Weak,213,6,100.0,1827,12.7,17.4,True,87,Fruits,12.21,2
+165,Bread Crumbs - Japanese Style,Durable,3,7,200.0,2079,2.2,2.4,False,99,Grains & Cereals,9.57,13
+166,Tray - 16in Rnd Blk,Unknown,71,9,300.0,1110,19.7,22.6,False,30,Non-Food Items,24.23,10
+167,Knife Plastic - White,Unknown,192,9,1000.0,1224,7.6,10.2,False,34,Non-Food Items,24.23,7
+168,Milk - 2%,Moderate,4,5,600.0,1152,4.5,5.9,True,96,Dairy,12.21,7
+169,Water - Aquafina Vitamin,Durable,363,3,400.0,2162,1.1,1.2,True,94,Beverages (Non-Alcoholic),27.76,9
+170,Initation Crab Meat,Weak,9,12,200.0,1386,14.0,15.7,True,33,Seafood,34.19,2
+171,Gloves - Goldtouch Disposable,Unknown,359,9,500.0,651,16.0,18.9,False,93,Non-Food Items,24.23,8
+172,Sherry - Dry,Durable,287,1,150.0,351,0.5,0.6,False,39,Alcoholic Beverages,18.11,10
+173,Rosemary - Dry,Durable,330,15,120.0,850,12.1,15.3,False,50,Spices & Seasonings,12.91,10
+174,Guinea Fowl,Moderate,102,8,80.0,2625,5.4,6.4,False,75,Meat & Poultry,31.39,7
+175,Oil - Safflower,Durable,361,10,200.0,1120,15.2,18.4,True,56,Pantry Staples,27.12,13
+176,Smirnoff Green Apple Twist,Durable,80,1,250.0,3420,4.2,5.5,False,95,Alcoholic Beverages,18.11,12
+177,"Coconut - Shredded, Sweet",Durable,166,10,200.0,1820,16.3,17.3,False,70,Pantry Staples,27.12,13
+178,Pernod,Durable,362,1,120.0,1386,9.2,10.4,True,42,Alcoholic Beverages,18.11,11
+179,Yoghurt Tubes,Moderate,176,5,300.0,988,22.0,28.7,False,38,Dairy,12.21,5
+180,Chocolate - Dark,Durable,183,13,250.0,3055,3.3,4.5,False,65,Snacks & Confectionery,30.48,10
+181,Phyllo Dough,Durable,340,7,200.0,609,8.1,10.0,False,87,Grains & Cereals,9.57,11
+182,Campari,Durable,351,1,150.0,1162,2.8,3.4,False,83,Alcoholic Beverages,18.11,11
+183,Spice - Peppercorn Melange,Durable,262,15,120.0,1886,21.8,23.7,False,41,Spices & Seasonings,12.91,9
+184,Hersey Shakes,Durable,110,3,250.0,1075,20.7,24.9,True,43,Beverages (Non-Alcoholic),27.76,13
+185,Foam Dinner Plate,Unknown,330,9,1000.0,1260,6.2,7.6,False,63,Non-Food Items,24.23,6
+186,Muffin Mix - Blueberry,Durable,336,10,250.0,1312,15.6,17.7,True,82,Pantry Staples,27.12,14
+187,"Pepper - Black, Whole",Durable,200,15,250.0,294,19.3,22.0,False,49,Spices & Seasonings,12.91,14
+188,Cup - Translucent 7 Oz Clear,Unknown,334,9,1000.0,2025,13.1,15.5,False,45,Non-Food Items,24.23,9
+189,"Bread - Roll, Soft White Round",Weak,4,2,400.0,2324,12.5,13.2,False,83,Bakery & Pastries,33.67,3
+190,Cake - Cake Sheet Macaroon,Weak,111,2,150.0,3315,5.8,6.7,False,85,Bakery & Pastries,33.67,2
+191,"Hickory Smoke, Liquid",Durable,86,4,120.0,2958,2.3,2.6,True,87,Condiments & Sauces,24.16,14
+192,"Wine - Magnotta, Merlot Sr Vqa",Durable,335,1,100.0,1122,21.1,24.6,True,33,Alcoholic Beverages,18.11,10
+193,"Veal - Inside, Choice",Moderate,350,8,120.0,1287,21.2,23.1,True,33,Meat & Poultry,31.39,4
+194,Lettuce - Frisee,Weak,195,16,150.0,1127,14.9,20.3,True,49,Vegetables,12.95,3
+195,Beets - Mini Golden,Weak,203,16,120.0,468,8.1,10.1,False,39,Vegetables,12.95,2
+196,Longos - Grilled Salmon With Bbq,Unknown,165,9,150.0,1590,8.3,10.7,False,53,Non-Food Items,24.23,7
+197,Mussels - Cultivated,Weak,217,12,150.0,2420,17.1,22.7,True,55,Seafood,34.19,1
+198,Lime Cordial - Roses,Durable,205,4,200.0,726,21.1,25.9,False,66,Condiments & Sauces,24.16,13
+199,Pork - Hock And Feet Attached,Moderate,61,8,120.0,2822,20.9,22.6,False,83,Meat & Poultry,31.39,5
+200,Garlic - Peeled,Weak,136,16,200.0,550,18.4,22.7,False,50,Vegetables,12.95,3
+201,Grenadine,Durable,191,4,150.0,469,15.1,19.0,False,67,Condiments & Sauces,24.16,13
+202,Bay Leaf,Durable,149,15,150.0,375,2.1,2.7,True,75,Spices & Seasonings,12.91,9
+203,"Chicken - Leg, Boneless",Moderate,322,8,350.0,1320,3.9,4.7,False,33,Meat & Poultry,31.39,7
+204,Scallop - St. Jaques,Weak,167,12,120.0,2581,21.2,23.2,False,89,Seafood,34.19,2
+205,"Turkey - Whole, Fresh",Moderate,133,8,120.0,3526,14.3,16.5,False,86,Meat & Poultry,31.39,7
+206,Cocoa Butter,Durable,98,10,150.0,370,0.3,0.4,True,74,Pantry Staples,27.12,13
+207,Coffee - Hazelnut Cream,Durable,218,3,250.0,931,2.5,3.2,False,49,Beverages (Non-Alcoholic),27.76,13
+208,"Mushroom - Trumpet, Dry",Weak,130,16,100.0,1886,15.7,19.6,True,46,Vegetables,12.95,3
+209,Sugar - Fine,Durable,300,10,500.0,561,0.2,0.3,True,33,Pantry Staples,27.12,11
+210,"Cheese - Brie,danish",Moderate,357,5,120.0,1892,3.9,5.4,False,43,Dairy,12.21,6
+211,Wine - Prosecco Valdobiaddene,Durable,215,1,150.0,384,13.0,16.4,False,32,Alcoholic Beverages,18.11,11
+212,Curry Paste - Madras,Durable,143,15,120.0,783,16.3,18.5,False,87,Spices & Seasonings,12.91,11
+213,Pate - Cognac,Durable,322,4,120.0,1092,15.4,16.7,True,84,Condiments & Sauces,24.16,14
+214,French Pastry - Mini Chocolate,Weak,231,2,200.0,165,5.4,5.9,False,33,Bakery & Pastries,33.67,1
+215,"Veal - Brisket, Provimi,bnls",Moderate,232,8,120.0,2120,16.8,19.1,False,53,Meat & Poultry,31.39,7
+216,Scallops - 10/20,Weak,106,12,150.0,2457,5.7,6.3,True,63,Seafood,34.19,2
+217,Bread - Multigrain,Weak,5,2,350.0,546,7.7,8.6,False,91,Bakery & Pastries,33.67,3
+218,Barramundi,Weak,200,12,150.0,2112,17.6,20.2,False,48,Seafood,34.19,3
+219,Assorted Desserts,Durable,177,10,200.0,1620,15.3,17.0,False,60,Pantry Staples,27.12,14
+220,Meldea Green Tea Liquor,Durable,336,1,100.0,1157,20.0,27.3,False,89,Alcoholic Beverages,18.11,13
+221,Bread Crumbs - Panko,Durable,8,7,250.0,3192,15.5,16.7,False,84,Grains & Cereals,9.57,13
+222,"Sole - Dover, Whole, Fresh",Weak,279,12,120.0,864,13.4,16.6,False,48,Seafood,34.19,1
+223,Pail With Metal Handle 16l White,Unknown,85,9,100.0,624,2.3,2.8,True,78,Non-Food Items,24.23,8
+224,Flour - Pastry,Durable,68,7,350.0,3128,8.7,12.2,False,92,Grains & Cereals,9.57,12
+225,Wine - Charddonnay Errazuriz,Durable,189,1,120.0,1785,6.3,6.9,False,51,Alcoholic Beverages,18.11,8
+226,"Chestnuts - Whole,canned",Durable,557,10,150.0,2226,5.8,6.9,False,53,Pantry Staples,27.12,12
+227,Cheese - Taleggio D.o.p.,Moderate,180,5,100.0,1365,22.9,31.8,False,91,Dairy,12.21,7
+228,Sauce - Hollandaise,Durable,184,4,200.0,3393,9.3,12.6,False,87,Condiments & Sauces,24.16,11
+229,Bread - Hot Dog Buns,Weak,4,2,450.0,1080,21.0,28.1,True,90,Bakery & Pastries,33.67,2
+230,"Wine - Cahors Ac 2000, Clos",Durable,331,1,100.0,651,14.9,17.0,True,93,Alcoholic Beverages,18.11,13
+231,Crush - Cream Soda,Durable,267,3,350.0,864,18.7,20.8,False,48,Beverages (Non-Alcoholic),27.76,10
+232,Quiche Assorted,Weak,108,2,150.0,1309,11.9,15.3,True,77,Bakery & Pastries,33.67,1
+233,Duck - Breast,Moderate,213,8,120.0,3626,13.6,18.7,False,74,Meat & Poultry,31.39,4
+234,Tofu - Firm,Durable,352,10,250.0,3024,11.6,14.5,False,84,Pantry Staples,27.12,11
+235,Bread - English Muffin,Weak,6,2,350.0,3344,4.7,5.9,False,88,Bakery & Pastries,33.67,1
+236,Tomato - Tricolor Cherry,Weak,109,16,250.0,2303,17.0,19.6,False,47,Vegetables,12.95,1
+237,Mayonnaise - Individual Pkg,Durable,211,4,500.0,2116,6.7,8.8,False,92,Condiments & Sauces,24.16,8
+238,Garlic,Weak,78,16,250.0,3192,0.7,0.8,False,76,Vegetables,12.95,2
+239,"Soup - Campbells, Cream Of",Unknown,159,14,300.0,1720,15.2,17.7,False,86,Soups,13.73,10
+240,Wine - Chablis 2003 Champs,Durable,239,1,120.0,444,4.3,5.1,False,74,Alcoholic Beverages,18.11,13
+241,Cheese - Cheddarsliced,Moderate,226,5,350.0,2728,22.1,27.2,False,62,Dairy,12.21,7
+242,Thermometer Digital,Unknown,261,9,80.0,966,22.5,25.5,False,46,Non-Food Items,24.23,5
+243,Sun - Dried Tomatoes,Durable,205,3,150.0,3762,21.5,23.5,False,99,Beverages (Non-Alcoholic),27.76,13
+244,Beef - Rib Eye Aaa,Moderate,223,8,200.0,1518,8.8,11.1,False,33,Meat & Poultry,31.39,4
+245,Grouper - Fresh,Weak,301,12,120.0,980,0.5,0.6,False,49,Seafood,34.19,1
+246,Ice Cream Bar - Hageen Daz To,Durable,128,13,300.0,3192,21.9,27.4,False,76,Snacks & Confectionery,30.48,14
+247,Juice - Apple Cider,Durable,234,3,300.0,264,10.1,11.2,False,44,Beverages (Non-Alcoholic),27.76,9
+248,Beef - Inside Round,Moderate,108,8,250.0,594,22.7,27.7,False,99,Meat & Poultry,31.39,6
+249,Cookie Dough - Double,Weak,62,2,250.0,2790,22.7,28.0,False,93,Bakery & Pastries,33.67,2
+250,"Soup - Campbells, Beef Barley",Unknown,178,14,250.0,646,20.1,21.5,False,38,Soups,13.73,5
+251,"Oranges - Navel, 72",Weak,208,6,350.0,1575,7.0,8.2,False,45,Fruits,12.21,3
+252,Nantucket - Pomegranate Pear,Durable,209,3,250.0,3724,9.1,10.0,False,98,Beverages (Non-Alcoholic),27.76,9
+253,Wanton Wrap,Durable,352,7,250.0,3870,20.0,21.5,True,90,Grains & Cereals,9.57,13
+254,"Soup - Canadian Pea, Dry Mix",Unknown,598,14,200.0,273,7.5,10.5,False,39,Soups,13.73,6
+255,Kellogs All Bran Bars,Durable,219,7,250.0,948,4.1,4.8,False,79,Grains & Cereals,9.57,13
+256,Soup Knorr Chili With Beans,Unknown,70,14,250.0,864,13.2,17.5,True,32,Soups,13.73,7
+257,"Pasta - Detalini, White, Fresh",Durable,197,7,250.0,1782,22.0,25.1,False,99,Grains & Cereals,9.57,13
+258,Tea - English Breakfast,Durable,137,3,350.0,2480,16.4,21.1,True,80,Beverages (Non-Alcoholic),27.76,11
+259,Veal - Eye Of Round,Moderate,136,8,150.0,1584,13.5,17.7,False,48,Meat & Poultry,31.39,4
+260,"Yogurt - Blueberry, 175 Gr",Moderate,313,5,350.0,3053,2.4,3.0,False,71,Dairy,12.21,6
+261,Chinese Foods - Chicken,Moderate,317,11,200.0,2752,14.5,17.6,True,64,Prepared Foods,8.56,6
+262,Bagel - Plain,Weak,350,2,400.0,375,23.3,27.8,False,75,Bakery & Pastries,33.67,3
+263,Soupfoamcont12oz 112con,Unknown,322,9,1000.0,1155,3.4,4.0,False,55,Non-Food Items,24.23,10
+264,Juice - V8 Splash,Durable,144,3,300.0,4410,12.3,16.9,False,98,Beverages (Non-Alcoholic),27.76,12
+265,"Mushroom - Porcini, Dry",Weak,205,16,100.0,3162,20.7,27.7,True,93,Vegetables,12.95,3
+266,Clam Nectar,Weak,101,12,200.0,1122,17.5,24.2,False,66,Seafood,34.19,3
+267,Grapes - Red,Weak,184,6,300.0,1950,16.4,18.0,False,78,Fruits,12.21,3
+268,Vanilla Beans,Durable,226,15,100.0,1150,16.6,21.6,False,50,Spices & Seasonings,12.91,8
+269,Wine - Blue Nun Qualitatswein,Durable,638,1,150.0,2139,8.5,11.8,False,93,Alcoholic Beverages,18.11,11
+270,Cheese Cloth No 100,Unknown,339,9,150.0,986,7.0,7.8,False,34,Non-Food Items,24.23,5
+271,Banana - Leaves,Weak,247,6,100.0,2574,19.1,20.5,False,99,Fruits,12.21,2
+272,"Chocolate - Semi Sweet, Calets",Durable,361,13,250.0,1155,19.1,25.0,False,33,Snacks & Confectionery,30.48,10
+273,Bandage - Flexible Neon,Unknown,78,9,200.0,1428,20.4,25.5,False,68,Non-Food Items,24.23,8
+274,Papayas,Weak,127,6,150.0,1728,21.5,28.9,True,64,Fruits,12.21,2
+275,Corn Meal,Durable,277,7,250.0,1080,12.1,13.3,False,30,Grains & Cereals,9.57,11
+276,Snapple - Iced Tea Peach,Durable,161,3,300.0,742,11.9,15.8,False,53,Beverages (Non-Alcoholic),27.76,11
+277,Sea Bass - Whole,Weak,101,12,120.0,1204,18.8,21.1,False,86,Seafood,34.19,1
+278,Apricots - Halves,Weak,347,6,200.0,3960,15.3,17.0,False,99,Fruits,12.21,2
+279,Beef - Texas Style Burger,Moderate,226,8,300.0,840,16.6,18.3,False,70,Meat & Poultry,31.39,5
+280,Onion Powder,Durable,168,15,200.0,1992,18.7,25.0,False,83,Spices & Seasonings,12.91,9
+281,"Bar Mix - Pina Colada, 355 Ml",Durable,95,4,200.0,2700,21.0,26.9,True,75,Condiments & Sauces,24.16,14
+282,"Lemonade - Natural, 591 Ml",Durable,291,3,300.0,1602,8.0,9.9,False,89,Beverages (Non-Alcoholic),27.76,9
+283,Bread Fig And Almond,Weak,7,2,150.0,2848,8.9,10.5,False,89,Bakery & Pastries,33.67,2
+284,Beer - Rickards Red,Durable,223,1,350.0,2408,2.3,3.1,True,86,Alcoholic Beverages,18.11,14
+285,Cheese - Mix,Moderate,132,5,250.0,1140,13.7,16.2,False,60,Dairy,12.21,6
+286,Beef - Prime Rib Aaa,Moderate,195,8,150.0,1378,1.0,1.3,False,53,Meat & Poultry,31.39,4
+287,Bread - Italian Roll With Herbs,Weak,3,2,300.0,3332,11.0,13.3,True,98,Bakery & Pastries,33.67,3
+288,"Orange - Canned, Mandarin",Weak,249,6,300.0,472,12.8,15.2,False,59,Fruits,12.21,1
+289,Sword Pick Asst,Unknown,255,9,500.0,901,6.8,8.3,False,53,Non-Food Items,24.23,9
+290,Sauce - Rosee,Durable,328,4,200.0,1593,14.0,16.1,False,59,Condiments & Sauces,24.16,8
+291,"Crab - Dungeness, Whole",Weak,108,12,120.0,432,0.8,1.1,True,36,Seafood,34.19,2
+292,Turkey - Oven Roast Breast,Moderate,189,8,250.0,1408,1.0,1.2,False,64,Meat & Poultry,31.39,6
+293,Garlic - Elephant,Weak,64,16,150.0,1344,19.4,21.9,False,84,Vegetables,12.95,2
+294,Wine - Alsace Gewurztraminer,Durable,607,1,120.0,1505,8.6,11.7,False,43,Alcoholic Beverages,18.11,8
+295,"Ice - Clear, 300 Lb For Carving",Unknown,86,9,50.0,702,3.1,3.7,False,39,Non-Food Items,24.23,7
+296,Wine - Valpolicella Masi,Durable,339,1,120.0,1710,12.3,15.3,True,45,Alcoholic Beverages,18.11,9
+297,Hinge W Undercut,Unknown,208,9,150.0,1826,18.1,24.8,False,83,Non-Food Items,24.23,5
+298,Pop Shoppe Cream Soda,Durable,323,3,250.0,3762,5.2,6.6,True,99,Beverages (Non-Alcoholic),27.76,10
+299,Fuji Apples,Weak,289,6,400.0,1095,14.7,16.0,True,73,Fruits,12.21,2
+300,"Beans - Kidney, Canned",Durable,246,7,350.0,3330,2.1,2.9,False,74,Grains & Cereals,9.57,13
+301,Beer - Labatt Blue,Durable,359,1,450.0,1360,1.3,1.7,False,85,Alcoholic Beverages,18.11,10
+302,"Doilies - 5, Paper",Unknown,117,9,500.0,1634,12.6,14.7,False,86,Non-Food Items,24.23,9
+303,Cod - Black Whole Fillet,Weak,318,12,180.0,1750,12.8,14.0,False,50,Seafood,34.19,3
+304,Banana Turning,Weak,189,6,150.0,3201,15.0,20.0,False,97,Fruits,12.21,2
+305,Pastry - Cheese Baked Scones,Weak,274,2,250.0,2370,17.1,21.7,False,79,Bakery & Pastries,33.67,3
+306,"Pepper - White, Ground",Durable,231,15,150.0,1364,23.0,28.4,False,62,Spices & Seasonings,12.91,8
+307,Foam Cup 6 Oz,Unknown,317,9,1000.0,1296,12.2,16.6,False,36,Non-Food Items,24.23,8
+308,Tea - Decaf Lipton,Durable,161,3,300.0,2574,7.7,10.2,False,99,Beverages (Non-Alcoholic),27.76,11
+309,Muffin Batt - Choc Chk,Weak,268,2,200.0,1848,18.7,20.7,True,44,Bakery & Pastries,33.67,1
+310,Coffee - Dark Roast,Durable,350,3,350.0,1281,6.5,7.5,False,61,Beverages (Non-Alcoholic),27.76,12
+311,Wonton Wrappers,Durable,345,7,250.0,1323,10.4,11.8,False,49,Grains & Cereals,9.57,12
+312,Salmon - Sockeye Raw,Weak,175,12,200.0,1232,2.0,2.6,True,44,Seafood,34.19,1
+313,Veal - Slab Bacon,Moderate,323,8,150.0,924,0.7,0.8,True,77,Meat & Poultry,31.39,7
+314,Salmon Steak - Cohoe 8 Oz,Weak,209,12,180.0,2250,22.7,28.3,False,50,Seafood,34.19,1
+315,Wine - Gato Negro Cabernet,Durable,621,1,150.0,710,19.7,25.9,False,71,Alcoholic Beverages,18.11,12
+316,Cheese - Victor Et Berthold,Moderate,95,5,100.0,495,16.4,22.3,False,55,Dairy,12.21,7
+317,Water - Green Tea Refresher,Durable,346,3,300.0,2064,9.7,11.3,False,43,Beverages (Non-Alcoholic),27.76,10
+318,Ecolab - Solid Fusion,Unknown,362,9,150.0,2838,4.2,5.6,True,86,Non-Food Items,24.23,7
+319,Towels - Paper / Kraft,Unknown,267,9,400.0,2112,3.8,4.1,False,66,Non-Food Items,24.23,8
+320,Yogurt - French Vanilla,Moderate,165,5,350.0,1305,6.0,8.0,False,87,Dairy,12.21,7
+321,"Potatoes - Instant, Mashed",Weak,217,16,300.0,250,13.0,14.2,False,50,Vegetables,12.95,1
+322,Onions - Vidalia,Weak,180,16,250.0,4606,16.8,20.0,False,98,Vegetables,12.95,1
+323,Extract - Lemon,Durable,114,10,150.0,736,15.6,20.7,False,32,Pantry Staples,27.12,12
+324,Apricots - Dried,Weak,71,6,200.0,858,6.7,7.4,False,66,Fruits,12.21,1
+325,Halibut - Fletches,Weak,204,12,150.0,2418,22.5,25.4,False,78,Seafood,34.19,2
+326,Appetizer - Mushroom Tart,Moderate,195,11,150.0,1824,17.4,22.7,False,48,Prepared Foods,8.56,4
+327,"Appetizer - Mini Egg Roll, Shrimp",Moderate,62,11,200.0,3840,13.1,17.1,False,80,Prepared Foods,8.56,7
+328,Tuna - Salad Premix,Weak,203,12,200.0,720,14.4,18.4,True,90,Seafood,34.19,2
+329,"Pork - Loin, Center Cut",Moderate,89,8,250.0,2800,9.9,12.9,True,70,Meat & Poultry,31.39,5
+330,Olives - Kalamata,Weak,296,16,250.0,1364,5.9,7.3,True,62,Vegetables,12.95,3
+331,Cookies Cereal Nut,Weak,52,2,200.0,1330,8.5,9.6,False,70,Bakery & Pastries,33.67,2
+332,Bouq All Italian - Primerba,Durable,174,15,120.0,1649,17.9,20.9,False,97,Spices & Seasonings,12.91,9
+333,Cheese - Cottage Cheese,Moderate,163,5,300.0,1426,0.5,0.5,False,62,Dairy,12.21,6
+334,Ecolab - Lime - A - Way 4/4 L,Unknown,177,9,100.0,530,2.8,3.9,False,53,Non-Food Items,24.23,6
+335,"Oil - Shortening,liqud, Fry",Durable,64,10,300.0,1440,1.2,1.5,False,90,Pantry Staples,27.12,10
+336,Broom - Corn,Unknown,307,9,50.0,3690,1.1,1.3,True,90,Non-Food Items,24.23,9
+337,Bread - Rye,Weak,6,2,250.0,1617,20.1,24.4,False,77,Bakery & Pastries,33.67,3
+338,Cheese - Camembert,Moderate,180,5,120.0,2349,16.6,22.9,False,87,Dairy,12.21,6
+339,Beef - Striploin Aa,Moderate,345,8,250.0,2160,11.2,12.4,False,72,Meat & Poultry,31.39,5
+340,Veal - Sweetbread,Moderate,7,8,80.0,2706,2.4,3.0,False,82,Meat & Poultry,31.39,7
+341,"Bread - Roll, Canadian Dinner",Weak,6,2,350.0,2997,11.6,14.3,False,81,Bakery & Pastries,33.67,1
+342,Mangoes,Weak,290,6,250.0,2418,11.2,14.2,False,78,Fruits,12.21,1
+343,Otomegusa Dashi Konbu,Durable,347,10,100.0,1334,4.2,4.4,True,46,Pantry Staples,27.12,11
+344,Sausage - Liver,Moderate,220,8,150.0,1386,10.3,13.9,True,99,Meat & Poultry,31.39,4
+345,Bread - Calabrese Baguette,Weak,7,2,300.0,2214,9.4,13.0,False,82,Bakery & Pastries,33.67,1
+346,Cheese - Parmesan Grated,Moderate,331,5,300.0,2350,14.5,18.1,False,94,Dairy,12.21,4
+347,Pail For Lid 1537,Unknown,97,9,100.0,850,15.0,19.4,False,34,Non-Food Items,24.23,9
+348,Pasta - Cheese / Spinach Bauletti,Durable,285,7,200.0,1457,1.2,1.6,False,31,Grains & Cereals,9.57,14
+349,Puree - Mocha,Durable,201,4,150.0,867,8.9,11.5,True,51,Condiments & Sauces,24.16,10
+350,Isomalt,Durable,351,10,100.0,3526,14.8,16.3,True,86,Pantry Staples,27.12,13
+351,Hot Chocolate - Individual,Durable,210,3,300.0,3515,11.9,14.9,False,95,Beverages (Non-Alcoholic),27.76,9
+352,"Beef - Tenderlion, Center Cut",Moderate,173,8,200.0,1260,20.2,25.5,False,45,Meat & Poultry,31.39,4
+353,Milk Powder,Moderate,7,5,250.0,4608,15.5,18.6,True,96,Dairy,12.21,7
+354,Crackers Cheez It,Weak,125,2,300.0,1020,3.9,5.1,False,68,Bakery & Pastries,33.67,3
+355,Olives - Stuffed,Weak,317,16,200.0,1449,1.8,2.4,True,69,Vegetables,12.95,3
+356,Dc - Frozen Momji,Weak,308,12,150.0,536,15.2,20.8,False,67,Seafood,34.19,1
+357,Tilapia - Fillets,Weak,239,12,250.0,2581,0.7,0.9,False,89,Seafood,34.19,1
+358,"Cheese - Boursin, Garlic / Herbs",Moderate,249,5,150.0,2992,13.8,15.1,False,88,Dairy,12.21,5
+359,Rice - Long Grain,Durable,213,7,400.0,1196,22.1,30.9,False,92,Grains & Cereals,9.57,12
+360,Wine - Hardys Bankside Shiraz,Durable,375,1,120.0,2325,13.6,18.3,False,93,Alcoholic Beverages,18.11,9
+361,Coffee Decaf Colombian,Durable,321,3,300.0,2208,9.2,10.1,True,92,Beverages (Non-Alcoholic),27.76,8
+362,Cumin - Whole,Durable,202,15,150.0,1794,15.2,20.8,True,78,Spices & Seasonings,12.91,9
+363,Cornflakes,Durable,160,7,300.0,2139,10.8,14.7,False,93,Grains & Cereals,9.57,12
+364,Cattail Hearts,Weak,303,16,80.0,976,12.9,15.9,False,61,Vegetables,12.95,2
+365,"Wine - Red, Harrow Estates, Cab",Durable,669,1,100.0,1476,22.2,27.9,False,36,Alcoholic Beverages,18.11,14
+366,Tahini Paste,Durable,71,4,150.0,2300,9.2,10.9,False,50,Condiments & Sauces,24.16,10
+367,Bread - Italian Corn Meal Poly,Weak,9,2,250.0,2079,22.6,24.2,False,99,Bakery & Pastries,33.67,1
+368,Flour - Teff,Durable,108,7,150.0,2255,21.3,24.9,False,55,Grains & Cereals,9.57,14
+369,Rambutan,Weak,101,6,100.0,4171,4.7,6.3,False,97,Fruits,12.21,1
+370,Muffin - Carrot Individual Wrap,Weak,225,2,250.0,1408,1.7,1.8,True,44,Bakery & Pastries,33.67,2
+371,Creme De Banane - Marie,Durable,141,1,120.0,1935,2.5,2.9,False,43,Alcoholic Beverages,18.11,13
+372,Wine - Two Oceans Cabernet,Durable,608,1,120.0,2184,0.5,0.6,True,56,Alcoholic Beverages,18.11,8
+373,Beef - Montreal Smoked Brisket,Moderate,350,8,200.0,1518,2.3,2.9,True,69,Meat & Poultry,31.39,6
+374,Jagermeister,Durable,217,1,200.0,1566,16.1,22.1,False,87,Alcoholic Beverages,18.11,14
+375,Snapple Lemon Tea,Durable,275,3,300.0,2223,1.8,2.1,True,57,Beverages (Non-Alcoholic),27.76,14
+376,Pasta - Angel Hair,Durable,217,7,300.0,2640,7.6,8.9,False,55,Grains & Cereals,9.57,14
+377,"Wine - Red, Cooking",Durable,641,1,200.0,4140,19.9,26.0,False,92,Alcoholic Beverages,18.11,9
+378,Bread Foccacia Whole,Weak,8,2,250.0,770,0.7,0.8,False,70,Bakery & Pastries,33.67,1
+379,Smoked Paprika,Durable,126,15,120.0,2430,19.2,21.7,False,54,Spices & Seasonings,12.91,13
+380,Wine - White Cab Sauv.on,Durable,186,1,120.0,544,6.7,8.1,True,32,Alcoholic Beverages,18.11,11
+381,Vaccum Bag 10x13,Unknown,73,9,500.0,1606,2.9,3.2,False,73,Non-Food Items,24.23,6
+382,Soup - Campbells Bean Medley,Unknown,132,14,250.0,2911,16.4,18.3,False,71,Soups,13.73,5
+383,Cake - Box Window 10x10x2.5,Weak,222,2,200.0,595,14.8,18.2,True,35,Bakery & Pastries,33.67,1
+384,Fond - Neutral,Durable,125,10,150.0,2720,20.7,24.7,False,68,Pantry Staples,27.12,14
+385,"Pork - Back, Short Cut, Boneless",Moderate,189,8,200.0,2835,17.3,23.7,True,81,Meat & Poultry,31.39,6
+386,Sprouts - Baby Pea Tendrils,Weak,265,16,150.0,312,18.9,22.3,True,52,Vegetables,12.95,3
+387,Fondant - Icing,Durable,335,10,200.0,1580,6.7,8.4,False,79,Pantry Staples,27.12,13
+388,Table Cloth 120 Round White,Unknown,315,9,200.0,936,4.3,5.4,True,72,Non-Food Items,24.23,6
+389,Pomello,Weak,325,6,120.0,624,17.7,18.7,False,48,Fruits,12.21,3
+390,"Seedlings - Mix, Organic",Weak,84,16,150.0,4116,19.0,24.4,False,98,Vegetables,12.95,1
+391,Bread - Bistro White,Weak,4,2,350.0,1200,23.3,25.9,False,80,Bakery & Pastries,33.67,2
+392,Puree - Passion Fruit,Durable,3,4,120.0,2132,9.8,13.6,True,82,Condiments & Sauces,24.16,9
+393,Olive - Spread Tapenade,Weak,312,16,150.0,1517,8.8,9.7,True,41,Vegetables,12.95,2
+394,Rum - Mount Gay Eclipes,Durable,348,1,150.0,1480,18.3,21.9,True,37,Alcoholic Beverages,18.11,8
+395,Juice - Lime,Durable,223,3,200.0,2597,8.1,8.7,False,53,Beverages (Non-Alcoholic),27.76,9
+396,Tea - Jasmin Green,Durable,154,3,250.0,1890,21.9,30.6,False,70,Beverages (Non-Alcoholic),27.76,11
+397,Juice - Happy Planet,Durable,329,3,250.0,3185,20.2,24.8,True,65,Beverages (Non-Alcoholic),27.76,11
+398,Wine - Wyndham Estate Bin 777,Durable,289,1,120.0,4116,10.2,12.8,False,84,Alcoholic Beverages,18.11,11
+399,Berry Brulee,Durable,297,13,200.0,1444,17.7,19.0,True,38,Snacks & Confectionery,30.48,8
+400,Carbonated Water - Blackcherry,Durable,84,3,300.0,988,17.8,23.3,False,76,Beverages (Non-Alcoholic),27.76,11
+401,"Tart Shells - Sweet, 4",Weak,200,2,200.0,1232,2.5,2.8,False,44,Bakery & Pastries,33.67,3
+402,Butter - Unsalted,Moderate,176,5,400.0,924,21.2,29.0,False,77,Dairy,12.21,7
+403,Liners - Baking Cups,Unknown,84,9,400.0,781,11.9,13.4,False,71,Non-Food Items,24.23,10
+404,Pants Custom Dry Clean,Unknown,138,9,30.0,3560,19.5,21.7,False,89,Non-Food Items,24.23,9
+405,Pastry - Raisin Muffin - Mini,Weak,127,2,250.0,2178,7.6,8.1,False,99,Bakery & Pastries,33.67,3
+406,"Shrimp - Baby, Warm Water",Weak,232,12,200.0,287,21.1,25.6,False,41,Seafood,34.19,1
+407,"Pepsi - Diet, 355 Ml",Durable,71,3,500.0,992,9.2,11.5,True,31,Beverages (Non-Alcoholic),27.76,12
+408,Blueberries,Weak,347,6,250.0,360,0.4,0.4,False,36,Fruits,12.21,2
+409,Skirt - 29 Foot,Unknown,187,9,100.0,1536,21.3,28.2,False,32,Non-Food Items,24.23,7
+410,Fenngreek Seed,Durable,155,15,100.0,1536,2.3,2.7,False,32,Spices & Seasonings,12.91,12
+411,Durian Fruit,Weak,6,6,100.0,2125,7.6,9.4,False,85,Fruits,12.21,2
+412,Lettuce - California Mix,Weak,200,16,300.0,2208,22.4,26.9,False,69,Vegetables,12.95,2
+413,Ice Cream Bar - Oreo Cone,Durable,90,13,350.0,2728,22.4,26.6,False,62,Snacks & Confectionery,30.48,8
+414,Sauerkraut,Weak,79,16,150.0,150,13.5,16.9,False,30,Vegetables,12.95,2
+415,Mussels - Frozen,Weak,205,12,200.0,1480,14.9,16.5,True,37,Seafood,34.19,2
+416,Baking Powder,Durable,219,10,250.0,1525,10.6,11.8,True,61,Pantry Staples,27.12,12
+417,"Lamb - Pieces, Diced",Moderate,102,8,180.0,3619,7.0,9.4,True,77,Meat & Poultry,31.39,7
+418,Truffle Cups - Brown,Durable,313,13,150.0,1287,7.8,10.8,True,33,Snacks & Confectionery,30.48,8
+419,Pork - Belly Fresh,Moderate,189,8,150.0,1683,15.9,18.7,False,99,Meat & Poultry,31.39,5
+420,Whmis - Spray Bottle Trigger,Unknown,239,9,150.0,672,17.7,20.3,True,48,Non-Food Items,24.23,8
+421,Soup V8 Roasted Red Pepper,Unknown,210,14,200.0,2928,18.6,23.8,False,61,Soups,13.73,7
+422,"Garlic - Primerba, Paste",Weak,346,16,200.0,532,18.6,22.2,False,38,Vegetables,12.95,3
+423,"Fish - Scallops, Cold Smoked",Weak,7,12,120.0,697,2.3,2.4,True,41,Seafood,34.19,1
+424,Vinegar - Tarragon,Durable,64,4,120.0,1640,11.7,12.9,False,40,Condiments & Sauces,24.16,11
+425,Wine - Redchard Merritt,Durable,646,1,100.0,3150,1.5,1.9,False,75,Alcoholic Beverages,18.11,8
+426,Scallops - Live In Shell,Weak,325,12,100.0,1260,13.0,16.6,False,45,Seafood,34.19,1
+427,Wine - Vineland Estate Semi - Dry,Durable,524,1,100.0,180,10.5,11.1,False,30,Alcoholic Beverages,18.11,13
+428,Wine - Ruffino Chianti,Durable,561,1,120.0,2392,20.9,23.6,False,92,Alcoholic Beverages,18.11,10
+429,Beef - Short Loin,Moderate,326,8,150.0,1050,8.3,9.4,True,50,Meat & Poultry,31.39,4
+430,Milk - 1%,Moderate,4,5,500.0,3760,2.9,3.7,False,94,Dairy,12.21,4
+431,Muffin Chocolate Individual Wrap,Weak,312,2,250.0,756,3.5,3.7,False,42,Bakery & Pastries,33.67,2
+432,Beer - Original Organic Lager,Durable,115,1,250.0,882,17.9,19.5,False,63,Alcoholic Beverages,18.11,11
+433,"Beans - Kidney, Red Dry",Durable,142,7,250.0,1287,14.6,19.4,True,33,Grains & Cereals,9.57,8
+434,Cookie - Dough Variety,Weak,38,2,250.0,2175,2.5,2.8,False,75,Bakery & Pastries,33.67,2
+435,"Salsify, Organic",Weak,158,16,100.0,616,2.1,2.7,True,88,Vegetables,12.95,3
+436,Table Cloth 81x81 White,Unknown,208,9,200.0,2352,16.5,18.7,True,56,Non-Food Items,24.23,5
+437,Chips Potato All Dressed - 43g,Durable,215,13,400.0,2058,1.8,2.0,False,98,Snacks & Confectionery,30.48,13
+438,Juice - Orange,Durable,249,3,400.0,864,19.4,22.0,False,54,Beverages (Non-Alcoholic),27.76,8
+439,"Beef - Chuck, Boneless",Moderate,322,8,300.0,896,16.7,21.7,False,32,Meat & Poultry,31.39,7
+440,Pork - Inside,Moderate,139,8,200.0,3201,2.0,2.7,False,97,Meat & Poultry,31.39,4
+441,Blackberries,Weak,311,6,150.0,2538,2.1,2.8,False,54,Fruits,12.21,3
+442,Wine - Ej Gallo Sierra Valley,Durable,439,1,120.0,1421,23.2,27.6,False,49,Alcoholic Beverages,18.11,10
+443,Lettuce - Spring Mix,Weak,319,16,350.0,2520,8.9,11.4,False,63,Vegetables,12.95,1
+444,Cheese - Cambozola,Moderate,162,5,100.0,1650,8.8,9.9,False,55,Dairy,12.21,4
+445,Pastry - Choclate Baked,Weak,99,2,200.0,1428,19.1,22.1,False,34,Bakery & Pastries,33.67,1
+446,Sunflower Seed Raw,Durable,332,10,200.0,450,22.3,30.4,True,90,Pantry Staples,27.12,14
+447,"Salmon - Atlantic, Skin On",Weak,160,12,250.0,912,23.2,24.5,False,38,Seafood,34.19,3
+448,Gatorade - Xfactor Berry,Durable,280,3,400.0,2528,17.8,19.2,False,79,Beverages (Non-Alcoholic),27.76,11
+449,Nantuket Peach Orange,Durable,183,3,250.0,700,8.9,10.0,False,35,Beverages (Non-Alcoholic),27.76,12
+450,Wine - Vidal Icewine Magnotta,Durable,601,1,80.0,1869,2.1,2.2,False,89,Alcoholic Beverages,18.11,11
+451,Soup - Campbells Tomato Ravioli,Unknown,290,14,250.0,3212,18.3,20.4,False,73,Soups,13.73,10
+452,Napkin White - Starched,Unknown,237,9,1000.0,1280,13.2,16.5,False,40,Non-Food Items,24.23,10
