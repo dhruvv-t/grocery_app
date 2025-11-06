@@ -1,5 +1,5 @@
 import pandas as pd
-from workflow.file_paths import paths
+from end_to_end.workflow.file_paths import paths
 
 
 # Function to set a week start tag for every week in the sales data
