@@ -1,21 +1,18 @@
-
-#!/usr/bin/env python3
-# generate_sales_6m.py
-# Efficient script to generate a large sales CSV (6M+ rows). Modify INPUT paths if needed.
+# Efficient script to generate a large sales CSV (6M+ rows).
 import pandas as pd, numpy as np, uuid, math, os
 from datetime import datetime
 
 
 def read_datasets():
-    employees = pd.read_csv("../end_to_end/datasets/employees_expanded.csv")
-    customers = pd.read_csv("../end_to_end/datasets/customers_updated.csv")
-    products = pd.read_csv("../end_to_end/datasets/products_cleaned.csv")
+    employees = pd.read_csv("end_to_end/datasets/employees_expanded.csv")
+    customers = pd.read_csv("end_to_end/datasets/customers_updated.csv")
+    products = pd.read_csv("end_to_end/datasets/products_updated.csv")
     return employees, customers, products
 
 
 def generate_product_quartile(products):
     product_ids = products['product_id'].values
-    product_prices = pd.to_numeric(products['price'], errors='coerce').fillna(0).values
+    product_prices = pd.to_numeric(products['selling_price'], errors='coerce').fillna(0).values
     prod_price_map = dict(zip(product_ids, product_prices))
     prices_series = pd.Series(product_prices)
     q25, q75 = prices_series.quantile(0.25), prices_series.quantile(0.75)
@@ -33,7 +30,7 @@ def sensible_qty_from_price(p, q25, q75):
 
 def generate_sales_data():
     employees, customers, products = read_datasets()
-    q25, q75, product_ids, prod_price_map = generate_product_quartile()
+    q25, q75, product_ids, prod_price_map = generate_product_quartile(products)
     total_rows_target = 6_000_000
     start_date = pd.to_datetime("2024-01-01")
     end_date = pd.to_datetime("2024-12-31")
@@ -64,7 +61,7 @@ def generate_sales_data():
         sec = np.random.randint(0, 24*60*60)
         forced_by_day[day_idx].append((emp, int(row['customer_id']), prod, int(qty), sec, str(uuid.uuid4())))
 
-    out_path = "../end_to_end/datasets/sales_6m.csv"
+    out_path = "end_to_end/datasets/sales_6m.csv"
     if os.path.exists(out_path):
         os.remove(out_path)
 
