@@ -1,4 +1,9 @@
+# Personal .txt notes for the projects
 Docs/
+
+# Random testing codes
 testing_codes/
 test.ipynb
-end_to_end/datasets/sales_6m.csv
+
+# Large dataset that can be generated using main.py
+end_to_end/datasets/original/sales.csv

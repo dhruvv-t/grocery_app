@@ -1,12 +1,13 @@
 # Efficient script to generate a large sales CSV (6M+ rows).
 import pandas as pd, numpy as np, uuid, math, os
 from datetime import datetime
+from end_to_end.workflow.file_paths import paths
 
 
 def read_datasets():
-    employees = pd.read_csv("end_to_end/datasets/employees_expanded.csv")
-    customers = pd.read_csv("end_to_end/datasets/customers_updated.csv")
-    products = pd.read_csv("end_to_end/datasets/products_updated.csv")
+    employees = pd.read_csv(paths['employees'])
+    customers = pd.read_csv(paths['customers'])
+    products = pd.read_csv(paths['products'])
     return employees, customers, products
 
 
@@ -61,7 +62,7 @@ def generate_sales_data():
         sec = np.random.randint(0, 24*60*60)
         forced_by_day[day_idx].append((emp, int(row['customer_id']), prod, int(qty), sec, str(uuid.uuid4())))
 
-    out_path = "end_to_end/datasets/sales_6m.csv"
+    out_path = paths['sales']
     if os.path.exists(out_path):
         os.remove(out_path)
 
@@ -95,3 +96,9 @@ def generate_sales_data():
             if rows_written >= total_rows_target:
                 break
     print(f'Done. Wrote {rows_written} rows to {out_path}')
+
+    sales = pd.read_csv(paths['sales'])
+    sales['sales_id'] = range(1, len(sales)+1)
+    sales.to_csv(paths['sales'], index=False)
+
+
