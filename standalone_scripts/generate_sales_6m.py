@@ -5,9 +5,9 @@
 import pandas as pd, numpy as np, uuid, math, os
 from datetime import datetime
 
-employees = pd.read_csv("end_to_end/datasets/employees_expanded.csv")
-customers = pd.read_csv("end_to_end/datasets/customers_updated.csv")
-products = pd.read_csv("end_to_end/datasets/products_cleaned.csv")
+employees = pd.read_csv("../end_to_end/datasets/employees_expanded.csv")
+customers = pd.read_csv("../end_to_end/datasets/customers_updated.csv")
+products = pd.read_csv("../end_to_end/datasets/products_cleaned.csv")
 
 product_ids = products['product_id'].values
 product_prices = pd.to_numeric(products['price'], errors='coerce').fillna(0).values
@@ -53,7 +53,7 @@ for idx, row in customers.reset_index().iterrows():
     sec = np.random.randint(0, 24*60*60)
     forced_by_day[day_idx].append((emp, int(row['customer_id']), prod, int(qty), sec, str(uuid.uuid4())))
 
-out_path = "end_to_end/datasets/sales_6m.csv"
+out_path = "../end_to_end/datasets/sales_6m.csv"
 if os.path.exists(out_path):
     os.remove(out_path)
 
