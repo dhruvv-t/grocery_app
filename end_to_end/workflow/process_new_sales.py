@@ -1,4 +1,5 @@
 import pandas as pd
+import csv
 from end_to_end.workflow.file_paths import paths
 
 
@@ -18,23 +19,31 @@ def month_start_date(dt_series):
 def process_sales():
     
     # Read the .csv files
+    print("Reading sales.csv file.")                          # Checkpoints -> Remove them in production
     sales = pd.read_csv(paths['sales'])
     products =  pd.read_csv(paths['products'])
     empty_df = pd.DataFrame(columns=sales.columns)
 
     # Make the date column timezone aware
+    print("Changing sales_date to timezone aware format.")                          # Checkpoints -> Remove them in production
     sales['sales_date'] = pd.to_datetime(sales['sales_date'])
-
+    print("Creating new columns for week and month start dates.")                          # Checkpoints -> Remove them in production
     sales['week_start'] = week_start_date(sales['sales_date'])
     sales['month_start'] = month_start_date(sales['sales_date'])
     
     # Adding the Total Selling Price Column
+    print("Calculating total_price for each sale.")                          # Checkpoints -> Remove them in production
     temp = sales[['sales_id', 'product_id', 'quantity']].merge(products[['product_id', 'selling_price']], on='product_id', how='left')
     sales['total_price'] = temp['quantity'] * temp['selling_price']
 
-    # Save as final csv
-    sales.to_csv(paths['sales_pro'], index=False)
+    # Save as final csvs
+    print("Adding Processed Sales data to the pre-existing data.")                          # Checkpoints -> Remove them in production
+    with open(paths['sales_pro'], mode="a", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerows(sales)
 
     # Reset original file for new data
+    print("Emptying the recent sales data for the next day.")                          # Checkpoints -> Remove them in production
     empty_df.to_csv(paths['sales'], index=False)
+    
 
