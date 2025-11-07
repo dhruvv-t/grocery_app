@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 import csv
 from end_to_end.workflow.file_paths import paths
 
@@ -10,9 +11,10 @@ def week_start_date(dt_series):
     return week_start
 
 # Function to set month start tag for every month in the sales data
-def month_start_date(dt_series):
-    month_start = dt_series.dt.to_period('M').dt.to_timestamp().dt.date
-    return month_start
+def month_number(dt_series):
+    month_number = dt_series.dt.month
+    year = dt_series.dt.year
+    return month_number, year
 
 
 # Process new Sales Data
@@ -29,7 +31,7 @@ def process_sales():
     sales['sales_date'] = pd.to_datetime(sales['sales_date'])
     print("Creating new columns for week and month start dates.")                          # Checkpoints -> Remove them in production
     sales['week_start'] = week_start_date(sales['sales_date'])
-    sales['month_start'] = month_start_date(sales['sales_date'])
+    sales['month'], sales['year'] = month_number(sales['sales_date'])
     
     # Adding the Total Selling Price Column
     print("Calculating total_price for each sale.")                          # Checkpoints -> Remove them in production
@@ -38,7 +40,10 @@ def process_sales():
 
     # Save as final csvs
     print("Adding Processed Sales data to the pre-existing data.")                          # Checkpoints -> Remove them in production
-    sales.to_csv(paths['sales_pro'], mode='a', index=False, header=False)
+    if os.path.exists(paths['sales_pro']):
+        sales.to_csv(paths['sales_pro'], mode='a', index=False, header=False)
+    else:
+        sales.to_csv(paths['sales_pro'], index=False)
 
     # Reset original file for new data
     print("Emptying the recent sales data for the next day.")                          # Checkpoints -> Remove them in production
