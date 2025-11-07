@@ -38,9 +38,7 @@ def process_sales():
 
     # Save as final csvs
     print("Adding Processed Sales data to the pre-existing data.")                          # Checkpoints -> Remove them in production
-    with open(paths['sales_pro'], mode="a", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
-        writer.writerows(sales)
+    sales.to_csv(paths['sales_pro'], mode='a', index=False, header=False)
 
     # Reset original file for new data
     print("Emptying the recent sales data for the next day.")                          # Checkpoints -> Remove them in production
