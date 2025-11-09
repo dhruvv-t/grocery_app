@@ -3,6 +3,15 @@ import pandas as pd
 import numpy as np
 
 
+def formula_autocorr_lag1(x):
+    x = np.array(x, dtype=float)
+    mean_x = np.mean(x)
+    numerator = np.sum((x[1:] - mean_x)*(x[:-1] - mean_x))
+    denominator = np.sum((x - mean_x)**2)
+    
+    return numerator/denominator if denominator != 0 else np.nan
+
+
 def calculate_monthly_sales(df):
     return df.groupby(['product_id', 'month'])['quantity'].sum().reset_index(name='total_sales')
 
@@ -33,15 +42,6 @@ def calculate_std_dev(df):
 def calculate_coeff_of_variation(df):
     df['coeff_variation'] = df['std_dev'] / df['mean_sales']
     return df
-
-
-def formula_autocorr_lag1(x):
-    x = np.array(x, dtype=float)
-    mean_x = np.mean(x)
-    numerator = np.sum((x[1:] - mean_x)*(x[:-1] - mean_x))
-    denominator = np.sum((x - mean_x)**2)
-    
-    return numerator/denominator if denominator != 0 else np.nan
 
 
 def calculate_acf1(df):
