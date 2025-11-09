@@ -18,6 +18,8 @@ testing_codes/
 test.ipynb
 
 # Large dataset that can be generated using main.py
+end_to_end/datasets/original/sales_old.csv
+end_to_end/datasets/processed/sales_pro_old.csv
 end_to_end/datasets/original/sales.csv
 end_to_end/datasets/processed/sales_pro.csv
 standalone_scripts/__pycache__/generate_sales_6m.cpython-313.pyc
