@@ -1,6 +1,10 @@
-# Stable, Trending and Volatile categorization of products
+# Functions for categorization of products based on their sales pattern
+
+# Imports
 import pandas as pd
 import numpy as np
+from statsmodels.tsa.seasonal import STL
+
 
 # Formulas
 
@@ -9,16 +13,27 @@ def formula_autocorr_lag1(x):
     mean_x = np.mean(x)
     numerator = np.sum((x[1:] - mean_x)*(x[:-1] - mean_x))
     denominator = np.sum((x - mean_x)**2)
-    
     return numerator/denominator if denominator != 0 else np.nan
 
 
+def formula_seasonal_strength(ts): # Input is the return of calculate_monthly_sales function
+    if len(ts) < 12:
+        return np.nan
+    stl = STL(ts, period=12, robust=True)
+    res = stl.fit()
+    total_var = np.var(ts) 
+    # seasonal_var = np.var(res.seasonal)
+    resid_var = np.var(res.resid)
+
+    return 1 - (resid_var / total_var)
+
+
 def calculate_monthly_sales(df):
-    return df.groupby(['product_id', 'month', 'year'])['quantity'].sum().reset_index(name='total_sales')
+    return df.groupby(['product_id', pd.Grouper(key='sales_date', freq='M')])['quantity'].sum().reset_index(name='total_sales')
 
 
 def calculate_number_of_months(df):
-    return len(calculate_monthly_sales(df)[['year', 'month']].drop_duplicates())
+    return len(calculate_monthly_sales(df)['sales_date'].unique())
 
 
 def calculate_mean(df): 
@@ -53,7 +68,7 @@ def calculate_coeff_of_variation(df): # Input is the Return of -> calculate_std_
     return df
 
 
-# Input is the -> Processed Sales Data <- and the return of -> calculate_coeff_of_variation() <- function
+# Input is the -> Processed Sales Data ( df ) <- and the return of -> calculate_coeff_of_variation()  ( match ) <- function
 def calculate_acf1(df, match): 
 
     buffer_df = calculate_monthly_sales(df)
@@ -72,6 +87,7 @@ def calculate_acf1(df, match):
     return result
 
 
+def calculate_seasonal_strength(df): # Input is the return of -> calculate_monthly_sales() <- function
+    return df.groupby('product_id').apply(lambda x: formula_seasonal_strength(x.set_index('sales_date')['total_sales'])).reset_index(name='seasonal_strength')
 
-def calculate_seasonal_strength(df): # Input is the return of calculate_monthly_sales function
-    print('Returns the seasonal strength for each product')
+    

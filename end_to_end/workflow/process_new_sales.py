@@ -27,6 +27,8 @@ def process_sales():
     empty_df = pd.DataFrame(columns=sales.columns)
 
     # Make the date column timezone aware
+    sales['sales_id'] = range(1, len(sales) + 1) 
+    sales['sales_date'] = range(1, len(sales['sales_date']))
     print("Changing sales_date to timezone aware format.")                          # Checkpoints -> Remove them in production
     sales['sales_date'] = pd.to_datetime(sales['sales_date'])
     print("Creating new columns for week and month start dates.")                          # Checkpoints -> Remove them in production
