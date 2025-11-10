@@ -63,6 +63,14 @@ def formula_trend_slope(df):
     return pd.Series({'trend_slope': slope, 'r_square': r_value**2})
 
 
+def formula_entropy(df):
+    
+    p = df['p_t'].dropna()
+    p = p[p > 0]
+    
+    return -np.sum(p * np.log(p))
+
+
 def calculate_monthly_sales(df):
     
     return df.groupby(['product_id', pd.Grouper(key='sales_date', freq='M')])['quantity'].sum().reset_index(name='total_sales')
@@ -167,3 +175,15 @@ def calculate_trend_slope(df): # Input is the return of -> calculate_monthly_sal
     )
     
     return df.groupby('product_id').apply(formula_trend_slope).reset_index()
+
+
+def calculate_entropy(df):
+    df['p_t'] = df.groupby('product_id')['total_sales'].transform(lambda x: x / x.sum())
+
+    entropy = df.groupby('product_id').apply(formula_entropy).reset_index(name='entropy')
+    entropy['entropy_norm'] = entropy['entropy'] / np.log(df['sales_date'].nunique())
+    
+    return entropy[['product_id', 'entropy_norm']]
+
+
+
