@@ -237,7 +237,7 @@ def generate_sales_data():
     try:
         with open(output_filepath, 'w') as output_file:
             # Write Header
-            output_file.write("sales_id,employee_id,customer_id,product_id,quantity,sale_time,transaction_id\n")
+            output_file.write("sales_id,employee_id,customer_id,product_id,quantity,sales_date,transaction_id\n")
             
             while rows_written < TARGET_ROWS:
                 day_str = current_date.strftime("%Y-%m-%d")
