@@ -4,6 +4,7 @@
 import pandas as pd
 import numpy as np
 from statsmodels.tsa.seasonal import STL
+from scipy.stats import linregress
 
 
 # Formulas
@@ -19,7 +20,7 @@ def formula_autocorr_lag1(x):
     return numerator/denominator if denominator != 0 else np.nan
 
 
-def formula_seasonal_strength(ts): # Input is the return of calculate_monthly_sales function
+def formula_seasonal_strength(ts):
     
     if len(ts) < 12:
         return np.nan
@@ -53,6 +54,13 @@ def formula_spike_fraction(ts):
     spike_fraction = np.sum(ts > mu + k * sigma) / len(ts)
 
     return pd.Series({'spike_fraction': spike_fraction})
+
+
+def formula_trend_slope(df):
+    if len(df) < 3:
+        return np.nan  # not enough data points
+    slope, _, r_value, _, _ = linregress(df['month_number'], df['total_sales'])
+    return pd.Series({'trend_slope': slope, 'r_square': r_value**2})
 
 
 def calculate_monthly_sales(df):
@@ -113,21 +121,49 @@ def calculate_acf1(df, match):
         .apply(formula_autocorr_lag1)
         .reset_index(name='autocorr_lag1')
     )
-    result = match.merge(result, on='product_id', how='left')
-    
-    return result
 
+    return match.merge(result, on='product_id', how='left')
+    
 
 def calculate_seasonal_strength(df): # Input is the return of -> calculate_monthly_sales() <- function
     
     return df.groupby('product_id').apply(lambda x: formula_seasonal_strength(x.set_index('sales_date')['total_sales'])).reset_index(name='seasonal_strength')
 
 
-def calculate_peakiness_and_spike_index(df): # Input is return of -> calculate_monthly_sales() <- function
+def calculate_peakiness_and_spike_index(df): # Input is the return of -> calculate_monthly_sales() <- function
     
     peakiness = df.groupby('product_id').apply(lambda x: formula_normalized_peakiness(x.set_index('sales_date')['total_sales'])).reset_index()
     spike_fraction = df.groupby('product_id').apply(lambda x: formula_spike_fraction(x.set_index('sales_date')['total_sales'])).reset_index()
 
-    spike_index = peakiness.merge(spike_fraction, on='product_id', how='left')
+    return peakiness.merge(spike_fraction, on='product_id', how='left')
 
-    return spike_index
+
+def calculate_zero_fraction(df): # Input is -> Processed Sales Data <-
+   
+    all_months = pd.date_range(
+        start=df['sales_date'].min().to_period('M').start_time,
+        end=df['sales_date'].max().to_period('M').end_time,
+        freq='M'
+    )
+    
+    product_month_index = pd.MultiIndex.from_product(
+        [df['product_id'].unique(), all_months],
+        names=['product_id', 'sales_date']
+    )
+
+    monthly_sales_full = (
+        calculate_monthly_sales(df).set_index(['product_id', 'sales_date'])
+        .reindex(product_month_index, fill_value=0)
+        .reset_index()
+    )
+
+    return monthly_sales_full.groupby('product_id')['total_sales'].apply(lambda x: (x == 0).sum() / len(x)).reset_index(name='zero_fraction')
+
+
+def calculate_trend_slope(df): # Input is the return of -> calculate_monthly_sales() <- function
+    
+    df['month_number'] = (
+        df.groupby('product_id')['sales_date'].rank(method='dense').astype(int)
+    )
+    
+    return df.groupby('product_id').apply(formula_trend_slope).reset_index()
