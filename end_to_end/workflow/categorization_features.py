@@ -73,7 +73,7 @@ def formula_entropy(df):
 
 def calculate_monthly_sales(df):
     
-    return df.groupby(['product_id', pd.Grouper(key='sales_date', freq='M')])['quantity'].sum().reset_index(name='total_sales')
+    return df.groupby(['product_id', pd.Grouper(key='sales_date', freq='ME')])['quantity'].sum().reset_index(name='total_sales')
 
 
 def calculate_number_of_months(df):
@@ -88,15 +88,14 @@ def calculate_mean(df):
 
 # Implementations
 
-
-# Returns Total Mean Sales and Standard Deviation
-def calculate_std_dev(df): # Input is -> Processed Sales Data <-
+# Input is -> Processed Sales Data <-
+def calculate_std_dev(df): 
     
     monthlyTotSales = calculate_monthly_sales(df)
     monthlyTotSales['product_sales_avg'] = (
     monthlyTotSales['product_id'].map(calculate_mean(df).set_index('product_id')['mean_sales']))
     monthlyTotSales['std_dev_buffer_value'] = (monthlyTotSales['total_sales'] - monthlyTotSales['product_sales_avg'])**2
-    monthlyTotSales.drop(columns=['total_sales', 'product_sales_avg', 'month'], inplace=True)   
+    monthlyTotSales.drop(columns=['total_sales', 'product_sales_avg'], inplace=True)
     
     feature_vector = calculate_mean(df)
     feature_vector['std_dev'] = feature_vector['product_id'].map(
@@ -108,50 +107,72 @@ def calculate_std_dev(df): # Input is -> Processed Sales Data <-
     )
 
     return feature_vector
+# Returns a DataFrame with following features:
+# Mean Sales, Standard Deviation
 
 
-def calculate_coeff_of_variation(df): # Input is the Return of -> calculate_std_dev() <- function 
+# Input is the Return of -> calculate_std_dev() <- function 
+def calculate_coeff_of_variation(df):
     
     df['coeff_variation'] = df['std_dev'] / df['mean_sales']
     
     return df
+# Returns a DataFrame with following features: 
+# Mean Sales, Standard Deviation, Coefficient of Variation
 
 
-# Input is the -> Processed Sales Data ( df ) <- and the return of -> calculate_coeff_of_variation()  ( match ) <- function
+# Input is the -> Processed Sales Data ( df ) <- and 
+# the return of -> calculate_coeff_of_variation()  ( match ) <- function
 def calculate_acf1(df, match): 
 
     buffer_df = calculate_monthly_sales(df)
     buffer_df['product_sales_avg'] = (buffer_df['product_id'].map(calculate_mean(df).set_index('product_id')['mean_sales']))
-    buffer_df = buffer_df.sort_values(by=['product_id', 'month'])
+    buffer_df = buffer_df.sort_values(by=['product_id'])
     
     result = (
         buffer_df.groupby('product_id')['total_sales']
         .apply(formula_autocorr_lag1)
         .reset_index(name='autocorr_lag1')
     )
-
+    
     return match.merge(result, on='product_id', how='left')
+# Returns a DataFrame with the following features: 
+# Mean Sales, Standard Deviation, Coefficient of Variation, Autocorrelation Lag1
+
+
+# Input is the return of -> calculate_monthly_sales()  ( df ) <- function
+# and the return of -> calculate_acf1()  ( match ) <- function
+def calculate_seasonal_strength(df, match): 
     
+    seasonal_strength = df.groupby('product_id', group_keys=False).apply(lambda x: formula_seasonal_strength(x.set_index('sales_date')['total_sales']), include_groups=False).reset_index(name='seasonal_strength')
 
-def calculate_seasonal_strength(df): # Input is the return of -> calculate_monthly_sales() <- function
+    return match.merge(seasonal_strength, on='product_id', how='left')
+# Returns a DataFrame with the following features:
+# Mean Sales, Standard Deviation, Coefficient of Variation, Autocorrelation Lag1, Seasonal Strength
+
+
+# Input is the return of -> calculate_monthly_sales()  ( df ) <- function
+# and the return of -> calculate_seasonal_strength()  ( match ) <- function
+def calculate_peakiness_and_spike_index(df, match): 
     
-    return df.groupby('product_id').apply(lambda x: formula_seasonal_strength(x.set_index('sales_date')['total_sales'])).reset_index(name='seasonal_strength')
+    peakiness = df.groupby('product_id', group_keys=False).apply(lambda x: formula_normalized_peakiness(x.set_index('sales_date')['total_sales']), include_groups=False).reset_index()
+    spike_fraction = df.groupby('product_id', group_keys=False).apply(lambda x: formula_spike_fraction(x.set_index('sales_date')['total_sales']), include_groups=False).reset_index()
+    peakX = peakiness.merge(spike_fraction, on='product_id', how='left')
+
+    return match.merge(peakX, on='product_id', how='left')
+# Returns a DataFrame with the following features:
+# Mean Sales, Standard Deviation, Coefficient of Variation, Autocorrelation Lag1, Seasonal Strength, 
+# Normalized Peakiness, Spike Fraction
 
 
-def calculate_peakiness_and_spike_index(df): # Input is the return of -> calculate_monthly_sales() <- function
-    
-    peakiness = df.groupby('product_id').apply(lambda x: formula_normalized_peakiness(x.set_index('sales_date')['total_sales'])).reset_index()
-    spike_fraction = df.groupby('product_id').apply(lambda x: formula_spike_fraction(x.set_index('sales_date')['total_sales'])).reset_index()
-
-    return peakiness.merge(spike_fraction, on='product_id', how='left')
-
-
-def calculate_zero_fraction(df): # Input is -> Processed Sales Data <-
+# Input is -> Processed Sales Data  ( df ) <- 
+# and the return of -> calculate_peakiness_and_spike_index()  ( match ) <- function
+def calculate_zero_fraction(df, match):
    
     all_months = pd.date_range(
         start=df['sales_date'].min().to_period('M').start_time,
         end=df['sales_date'].max().to_period('M').end_time,
-        freq='M'
+        freq='ME'
     )
     
     product_month_index = pd.MultiIndex.from_product(
@@ -165,25 +186,40 @@ def calculate_zero_fraction(df): # Input is -> Processed Sales Data <-
         .reset_index()
     )
 
-    return monthly_sales_full.groupby('product_id')['total_sales'].apply(lambda x: (x == 0).sum() / len(x)).reset_index(name='zero_fraction')
+    zero_fraction = monthly_sales_full.groupby('product_id')['total_sales'].apply(lambda x: (x == 0).sum() / len(x)).reset_index(name='zero_fraction')
+
+    return match.merge(zero_fraction, on='product_id', how='left')
+# Returns a DataFrame with the following features:
+# Mean Sales, Standard Deviation, Coefficient of Variation, Autocorrelation Lag1, Seasonal Strength, 
+# Normalized Peakiness, Spike Fraction, Zero Fraction
 
 
-def calculate_trend_slope(df): # Input is the return of -> calculate_monthly_sales() <- function
+# Input is the return of -> calculate_monthly_sales()  ( df ) <- function
+# and the return of -> calculate_zero_fraction()  ( match ) <- function
+def calculate_trend_slope(df, match):
     
     df['month_number'] = (
         df.groupby('product_id')['sales_date'].rank(method='dense').astype(int)
     )
-    
-    return df.groupby('product_id').apply(formula_trend_slope).reset_index()
+    trend_slope = df.groupby('product_id').apply(formula_trend_slope, include_groups=False).reset_index()
+
+    return match.merge(trend_slope, on='product_id', how='left')
+# Returns a DataFrame with the following features:
+# Mean Sales, Standard Deviation, Coefficient of Variation, Autocorrelation Lag1, Seasonal Strength, 
+# Normalized Peakiness, Spike Fraction, Zero Fraction, Trend Slope, R-Square
 
 
-def calculate_entropy(df):
+# Input is the return of -> calculate_monthly_sales()  ( df ) <-
+# and the return of -> calculate_trend_slope()  ( match ) <- 
+def calculate_entropy(df, match):
     df['p_t'] = df.groupby('product_id')['total_sales'].transform(lambda x: x / x.sum())
 
-    entropy = df.groupby('product_id').apply(formula_entropy).reset_index(name='entropy')
+    entropy = df.groupby('product_id').apply(formula_entropy, include_groups=False).reset_index(name='entropy')
     entropy['entropy_norm'] = entropy['entropy'] / np.log(df['sales_date'].nunique())
     
-    return entropy[['product_id', 'entropy_norm']]
-
+    return match.merge(entropy[['product_id', 'entropy_norm']], on='product_id', how='left')
+# Returns a DataFrame with the following features:
+# Mean Sales, Standard Deviation, Coefficient of Variation, Autocorrelation Lag1, Seasonal Strength, 
+# Normalized Peakiness, Spike Fraction, Zero Fraction, Trend Slope, R-Square, Entropy
 
 

@@ -16,7 +16,6 @@ def month_number(dt_series):
     year = dt_series.dt.year
     return month_number, year
 
-
 # Process new Sales Data
 def process_sales():
     

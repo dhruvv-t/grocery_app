@@ -6,4 +6,5 @@ paths = {
     'categories' : 'end_to_end/datasets/original/categories.csv',
     'cities' : 'end_to_end/datasets/original/cities.csv',
     'sales_pro' : 'end_to_end/datasets/processed/sales_pro.csv',
+    'cat_feature_vector' : 'end_to_end/datasets/processed/categorization_feature_vector.csv',
 }
