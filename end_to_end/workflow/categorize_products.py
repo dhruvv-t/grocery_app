@@ -13,7 +13,7 @@ def load_dataset():
 
 
 
-def categorize_all_products():
+def save_product_wise_feature_vector():
     sales = load_dataset()
 
     monthly_sales = categorization_features.calculate_monthly_sales(sales)
@@ -28,4 +28,8 @@ def categorize_all_products():
     feature_vector = categorization_features.calculate_entropy(monthly_sales, feature_vector)
 
     feature_vector.to_csv(paths['cat_feature_vector'], index=False)
+    print(feature_vector)
+    
 
+def categorize_products_on_sales():
+    print('categorize products')

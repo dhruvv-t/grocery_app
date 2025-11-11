@@ -16,6 +16,8 @@ Docs/
 # Random testing codes
 testing_codes/
 test.ipynb
+test.py
+
 
 # Large dataset that can be generated using main.py
 end_to_end/datasets/original/sales_old.csv
