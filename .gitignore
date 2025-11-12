@@ -24,4 +24,5 @@ end_to_end/datasets/original/sales_old.csv
 end_to_end/datasets/processed/sales_pro_old.csv
 end_to_end/datasets/original/sales.csv
 end_to_end/datasets/processed/sales_pro.csv
+end_to_end/datasets/processed/categorization_feature_vector.csv
 standalone_scripts/generate_sales_6m.py

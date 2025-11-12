@@ -85,7 +85,6 @@ def calculate_mean(df):
     
     return ((df.groupby(['product_id'])['quantity'].sum() / calculate_number_of_months(df)).reset_index(name='mean_sales'))
 
-
 # Implementations
 
 # Input is -> Processed Sales Data <-
