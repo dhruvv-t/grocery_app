@@ -222,9 +222,9 @@ def calculate_entropy(df, match):
     df['p_t'] = df.groupby('product_id')['total_sales'].transform(lambda x: x / x.sum())
     print("Calculating Product Wise Entropy                 ", end='\r')  # Comment out at time of deployment
     entropy = df.groupby('product_id').apply(formula_entropy, include_groups=False).reset_index(name='entropy')
-    entropy['entropy_norm'] = entropy['entropy'] / np.log(df['sales_date'].nunique())
+    # entropy['entropy_norm'] = entropy['entropy'] / np.log(df['sales_date'].nunique())
     
-    return match.merge(entropy[['product_id', 'entropy_norm']], on='product_id', how='left')
+    return match.merge(entropy[['product_id', 'entropy']], on='product_id', how='left')
 # Returns a DataFrame with the following features:
 # Mean Sales, Standard Deviation, Coefficient of Variation, Autocorrelation Lag1, Seasonal Strength, 
 # Normalized Peakiness, Spike Fraction, Zero Fraction, Trend Slope, R-Square, Entropy

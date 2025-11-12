@@ -2,7 +2,7 @@ import os
 
 from end_to_end.workflow.file_paths import paths
 from end_to_end.workflow.process_new_sales import process_sales
-from end_to_end.workflow.categorize_products import save_product_wise_feature_vector
+from end_to_end.workflow.categorize_products import categorize_products_on_sales
 
 from standalone_scripts.realistic_dataset_generator import generate_sales_data
 from standalone_scripts.generate_directory_tree import print_tree
@@ -16,4 +16,4 @@ if not os.path.exists(paths['sales']):
 
 process_sales()
 
-save_product_wise_feature_vector()
+categorize_products_on_sales()

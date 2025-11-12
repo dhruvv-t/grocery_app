@@ -18,11 +18,11 @@ testing_codes/
 test.ipynb
 test.py
 
+# Folders
+end_to_end/datasets/processed/
 
 # Large dataset that can be generated using main.py
 end_to_end/datasets/original/sales_old.csv
-end_to_end/datasets/processed/sales_pro_old.csv
 end_to_end/datasets/original/sales.csv
-end_to_end/datasets/processed/sales_pro.csv
-end_to_end/datasets/processed/categorization_feature_vector.csv
+end_to_end/datasets/original/demand_categories.csv
 standalone_scripts/generate_sales_6m.py
