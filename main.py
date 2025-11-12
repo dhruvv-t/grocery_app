@@ -1,19 +1,21 @@
+# Imports
 import os
+from end_to_end.workflow import process_new_sales, file_paths
+from keystride.grocery_demo.end_to_end.workflow.product_categorization import categorize_products
+from standalone_scripts import generate_directory_tree, realistic_dataset_generator
 
-from end_to_end.workflow.file_paths import paths
-from end_to_end.workflow.process_new_sales import process_sales
-from end_to_end.workflow.categorize_products import categorize_products_on_sales
-
-from standalone_scripts.realistic_dataset_generator import generate_sales_data
-from standalone_scripts.generate_directory_tree import print_tree
-
+# Displaying the Directory Tree
 print("Here is the project's File Structure: ")
 root_dir = os.getcwd()
-print_tree(root_dir)
+generate_directory_tree.print_tree(root_dir)
 
-if not os.path.exists(paths['sales']):
-    generate_sales_data()
+# Generating the dataset if it doesn't exits
+if not os.path.exists(file_paths.paths['sales']):
+    realistic_dataset_generator.generate_sales_data()
 
-process_sales()
+# Pre-processing the sales data
+process_new_sales.process_sales()
 
-categorize_products_on_sales()
+# Categorize products into categories (Stable, Trending, Volatile) 
+# based on their sales patterns
+categorize_products.categorize_products_on_sales()

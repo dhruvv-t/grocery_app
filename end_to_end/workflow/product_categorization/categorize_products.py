@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.mixture import GaussianMixture
 
 from end_to_end.workflow.file_paths import paths
-from end_to_end.workflow import categorization_features
+from keystride.grocery_demo.end_to_end.workflow.product_categorization import categorization_features
 
 
 # Utility Functions
