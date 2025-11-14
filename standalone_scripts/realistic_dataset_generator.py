@@ -200,10 +200,10 @@ def generate_sales_data():
     # --- A. Setup ---
     global START_DATE # Make start date global for 'trending' calculation
     
-    TARGET_ROWS = 6_000_000
+    TARGET_ROWS = 12_000_000
     AVG_SALES_PER_DAY = 10_000 # 6M / 600 days
     N_DAYS = (TARGET_ROWS // AVG_SALES_PER_DAY) + 1 # ~601 days
-    START_DATE = datetime(2023, 1, 1)
+    START_DATE = datetime(2023, 1, 2)
 
     print(f"Targeting {TARGET_ROWS} rows over approx. {N_DAYS} days.")
     

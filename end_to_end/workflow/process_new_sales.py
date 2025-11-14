@@ -12,6 +12,7 @@ def week_start_date(dt_series):
 
 # Function to set month start tag for every month in the sales data
 def month_number(dt_series):
+    date = dt_series.dt.day
     month_number = dt_series.dt.month
     year = dt_series.dt.year
     return month_number, year
@@ -38,7 +39,7 @@ def process_sales():
     temp = sales[['sales_id', 'product_id', 'quantity']].merge(products[['product_id', 'selling_price']], on='product_id', how='left')
     sales['total_price'] = temp['quantity'] * temp['selling_price']
 
-    # Save as final csvs
+    # Save as final CSVs
     print("Adding Processed Sales data to the pre-existing data.")                          # Checkpoints -> Remove them in production
     if os.path.exists(paths['sales_pro']):
         sales.to_csv(paths['sales_pro'], mode='a', index=False, header=False)

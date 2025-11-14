@@ -1,13 +1,13 @@
 # Imports
 import os
 from end_to_end.workflow import process_new_sales, file_paths
-from keystride.grocery_demo.end_to_end.workflow.product_categorization import categorize_products
+from end_to_end.workflow.product_categorization import categorize_products
 from standalone_scripts import generate_directory_tree, realistic_dataset_generator
 
 # Displaying the Directory Tree
 print("Here is the project's File Structure: ")
-root_dir = os.getcwd()
-generate_directory_tree.print_tree(root_dir)
+# root_dir = os.getcwd()
+# generate_directory_tree.print_tree(root_dir)
 
 # Generating the dataset if it doesn't exits
 if not os.path.exists(file_paths.paths['sales']):
