@@ -13,7 +13,7 @@ print("Here is the project's File Structure: ")
 if not os.path.exists(file_paths.paths['sales']):
     realistic_dataset_generator.generate_sales_data()
 
-# Pre-processing the sales data
+# # Pre-processing the sales data
 process_new_sales.process_sales()
 
 # Categorize products into categories (Stable, Trending, Volatile) 

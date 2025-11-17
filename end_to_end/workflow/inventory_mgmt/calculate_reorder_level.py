@@ -27,4 +27,4 @@ def calculate_safety_stock():
 
 
 def calculate_reorder_level():
-    print("hello")
+    print('calculate Reorder Level.')
