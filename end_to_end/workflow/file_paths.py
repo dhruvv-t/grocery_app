@@ -4,5 +4,5 @@ paths = {
 
     'sales_pro' : 'end_to_end/datasets/processed/sales_pro.csv', 'cat_feature_vector' : 'end_to_end/datasets/processed/products_feature_vector.csv',
     'demand_cats' : 'end_to_end/datasets/original/demand_categories.csv', 'catzd_products' : 'end_to_end/datasets/processed/categorized_products.csv',
-    'reorder_levels': 'end_to_end/datasets/processed/reorder_level.csv',
+    'reorder_specifics': 'end_to_end/datasets/processed/reorder_specifications.csv', 'reorder_date' : 'end_to_end/datasets/processed/order_date.csv',
 }
