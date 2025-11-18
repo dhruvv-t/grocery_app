@@ -14,3 +14,4 @@ def print_tree(startpath, prefix=""):
             print_tree(path, prefix + extension)
         else:
             print(f"{prefix}{connector} File: {item}")
+

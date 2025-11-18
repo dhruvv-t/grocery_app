@@ -70,7 +70,7 @@ def assign_demand_profiles(products_df):
     # Ensure demand_score is numeric, fill NaNs with median
     if 'demand_score' not in products_df.columns:
         print("Warning: 'demand_score' column not found. Using random profiles.")
-        products_df['demand_score'] = np.random.randint(1, 101, size=len(products_df))
+        products_df['demand_score'] = np.random.randint(1, 101, size=len(products_df)) 
         
     products_df['demand_score'] = pd.to_numeric(products_df['demand_score'], errors='coerce')
     products_df['demand_score'] = products_df['demand_score'].fillna(products_df['demand_score'].median())

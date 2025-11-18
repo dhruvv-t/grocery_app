@@ -11,8 +11,8 @@ from end_to_end.workflow.inventory_mgmt import calculate_reorder_specifications
 
 # Displaying the Directory Tree
 print("Here is the project's File Structure: ")
-# root_dir = os.getcwd()
-# generate_directory_tree.print_tree(root_dir)
+root_dir = os.getcwd()
+generate_directory_tree.print_tree(root_dir)
 
 # Generating the dataset if it doesn't exits
 if not os.path.exists(file_paths.paths['sales']):
@@ -21,8 +21,7 @@ if not os.path.exists(file_paths.paths['sales']):
 # Pre-processing the sales data
 process_new_sales.process_sales()
 
-# Categorize products into categories (Stable, Trending, Volatile) 
-# based on their sales patterns
+# Categorize products into categories based on their sales patterns
 categorize_products.categorize_products_on_sales()
 
 # Calculate Reorder Levels and Quantities for each product
