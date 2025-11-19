@@ -14,18 +14,24 @@ def load_dataset():
     products = pd.read_csv(paths['products'])
     sales['sales_date'] = pd.to_datetime(sales['sales_date'])
     sales['date'] = sales['sales_date'].dt.day
-    return sales, products
+
+    # Data which we analyze when iterating over sales data
+    data_to_analyze = sales[sales['sales_date'].dt.year != 2023]
+    sales = sales[sales['sales_date'].dt.year == 2023]
+    data_to_analyze['sales_id'] = range(1, len(data_to_analyze)+1)
+    data_to_analyze = data_to_analyze.reset_index(drop=True)
+    data_to_analyze.index = data_to_analyze.index + 1
+    
+    return sales, products, data_to_analyze
 
 
 # Returns 2 DataFrames
 def calculate_safety_stock():
 
-    sales, products = load_dataset()
-
+    sales, products, data_to_analyze = load_dataset()
     one_year_stats = (
-        (
-            sales[sales['sales_date'].dt.year == 2023]
-        ).groupby(['product_id', 'month', 'week_start', 'date'])['quantity']
+        sales
+        .groupby(['product_id', 'month', 'week_start', 'date'])['quantity']
         .sum().reset_index(name='daily_sales')
     ).groupby(['product_id'])['daily_sales'].agg(avg_daily_sales='mean', max_daily_sales='max').reset_index()
 
@@ -33,24 +39,34 @@ def calculate_safety_stock():
     one_year_stats['safety_stock'] = (
         (one_year_stats['max_daily_sales'] - one_year_stats['avg_daily_sales']) * products['lead_time_days']
     ).round(0)
-
     products = (products.merge(one_year_stats[['product_id', 'safety_stock']], on='product_id', how='left'))[['product_id', 'category_id', 'product_name', 'vitality_days', 'lead_time_days', 'safety_stock']]
-    return products, sales
+    
+    return products, sales, data_to_analyze
 
 
-# Doesn't Return anything, Saves a .csv file with Reorder Level and Date to Recalculate it on.
+# Saves Reorder Level, Quantity and Recalculation Date to reorder_specifications.csv
+# Returns reorder_specifics and Sales Data that we will Iterate over
 def initialize_reorder_level():
 
+    # Read products.csv and initialize the sales data into a variable
     categorized_products = pd.read_csv(paths['catzd_products'])
-    products, sales = calculate_safety_stock()
+    products, sales, data_to_analyze = calculate_safety_stock()
 
-    sales_to_analyze = sales[sales['sales_date'].dt.year == 2023].merge(
+    # Adding category tags to both: Sales Data and Product List
+    sales_to_analyze = sales.merge(
         categorized_products,
         on='product_id',
         how='left'
     )
-    products = products.merge(categorized_products, on='product_id', how='left')
+    products = products.merge(
+        categorized_products,
+        on='product_id',
+        how='left'
+    )
+    
+    # Initializing a Reorder Level and Quantity Value for each product based on their category.
 
+    # For Stable Products
     print("Calculating Reorder Level for Stable products            ", end='\r') 
     stable_reorder_initialize = (
         sales_to_analyze[sales_to_analyze['category'] == 'Stable']
@@ -63,6 +79,7 @@ def initialize_reorder_level():
         ).dt.date
     ).reset_index()['sales_date']
 
+    # For Trending Products
     print("Calculating Reorder Level for Trending products          ", end='\r') 
     trending_reorder_initialize = (sales_to_analyze[
         (sales_to_analyze['category'] == 'Trending') 
@@ -78,6 +95,7 @@ def initialize_reorder_level():
         ).dt.date
     ).reset_index()['sales_date']
 
+    # For Volatile Products
     print("Calculating Reorder Level for Volatile products          ", end='\r') 
     volatile_reorder_initialize = (sales_to_analyze[
         (sales_to_analyze['category'] == 'Volatile') 
@@ -91,6 +109,7 @@ def initialize_reorder_level():
         ).dt.date
     ).reset_index()['sales_date']
 
+    # Consolidating data of all 3 categories
     products = products.merge(
         pd.concat([
             stable_reorder_initialize, 
@@ -99,6 +118,7 @@ def initialize_reorder_level():
         ], ignore_index=True), on='product_id', how='left'
     ).rename(columns={'quantity': 'avg_daily_demand'})
 
+    # Handling the Missing values (Missing Values occur if there are NO SALES for products during the period being analyzed)
     print("Handling NA values in the because of missing values      ", end='\r') 
     products['avg_daily_demand'] = products['avg_daily_demand'].fillna(0)
     products['recalculate_on'] = products['recalculate_on'].fillna(
@@ -107,7 +127,7 @@ def initialize_reorder_level():
 
     products['avg_daily_demand'] = products['avg_daily_demand'].apply(math.ceil)
     print("Compiling Reorder Levels for all Three Categories        ", end='\r') 
-    products['reorder_level'] = (products['avg_daily_demand'] * products['lead_time_days']) + products['safety_stock']
+    products['reorder_level'] = ((products['avg_daily_demand'] * products['lead_time_days']) + products['safety_stock']).astype("Int64")
     print("Calculating Perishability Factor for each Product        ", end='\r') 
     products['perishability_factor'] = (products['vitality_days'] / 10).clip(upper=1)
     print("Calculating Category Factor for each Category            ", end='\r') 
@@ -118,16 +138,9 @@ def initialize_reorder_level():
                 (products['vitality_days'] * products['perishability_factor']),
                 (products['lead_time_days'] * products['category_factor'])
             )
-    )
+    ).apply(math.ceil)
 
     print(f'Saving calculated features in as a CSV file: {paths['reorder_specifics']}') 
     products[['product_id', 'category', 'reorder_level', 'reorder_quantity', 'recalculate_on']].to_csv(paths['reorder_specifics'], index=False)
 
-
-# Saves the New Reorder Level and the Next Date to Recalculate it on, in the pre-existing .csv file.
-def calculate_reorder_level():
-
-    recalculate = pd.read_csv(paths['reorder_levels'])
-    print('Recalculate Reorder Levels')
-
-
+    return products[['product_id', 'category', 'reorder_level', 'reorder_quantity', 'recalculate_on']], data_to_analyze
