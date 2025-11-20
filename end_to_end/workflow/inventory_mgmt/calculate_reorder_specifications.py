@@ -14,21 +14,14 @@ def load_dataset():
     products = pd.read_csv(paths['products'])
     sales['sales_date'] = pd.to_datetime(sales['sales_date'])
     sales['date'] = sales['sales_date'].dt.day
-
-    # Data which we analyze when iterating over sales data
-    data_to_analyze = sales[sales['sales_date'].dt.year != 2023]
-    sales = sales[sales['sales_date'].dt.year == 2023]
-    data_to_analyze['sales_id'] = range(1, len(data_to_analyze)+1)
-    data_to_analyze = data_to_analyze.reset_index(drop=True)
-    data_to_analyze.index = data_to_analyze.index + 1
     
-    return sales, products, data_to_analyze
+    return sales, products
 
 
 # Returns 2 DataFrames
 def calculate_safety_stock():
 
-    sales, products, data_to_analyze = load_dataset()
+    sales, products = load_dataset()
     one_year_stats = (
         sales
         .groupby(['product_id', 'month', 'week_start', 'date'])['quantity']
@@ -41,7 +34,7 @@ def calculate_safety_stock():
     ).round(0)
     products = (products.merge(one_year_stats[['product_id', 'safety_stock']], on='product_id', how='left'))[['product_id', 'category_id', 'product_name', 'vitality_days', 'lead_time_days', 'safety_stock']]
     
-    return products, sales, data_to_analyze
+    return products, sales
 
 
 # Saves Reorder Level, Quantity and Recalculation Date to reorder_specifications.csv
@@ -50,7 +43,7 @@ def initialize_reorder_level():
 
     # Read products.csv and initialize the sales data into a variable
     categorized_products = pd.read_csv(paths['catzd_products'])
-    products, sales, data_to_analyze = calculate_safety_stock()
+    products, sales = calculate_safety_stock()
 
     # Adding category tags to both: Sales Data and Product List
     sales_to_analyze = sales.merge(
@@ -143,4 +136,4 @@ def initialize_reorder_level():
     print(f'Saving calculated features in as a CSV file: {paths['reorder_specifics']}') 
     products[['product_id', 'category', 'reorder_level', 'reorder_quantity', 'recalculate_on']].to_csv(paths['reorder_specifics'], index=False)
 
-    return products[['product_id', 'category', 'reorder_level', 'reorder_quantity', 'recalculate_on']], data_to_analyze
+    return products[['product_id', 'category', 'reorder_level', 'reorder_quantity', 'recalculate_on']], sales[['sales_id', 'product_id', 'quantity', 'sales_date']]
