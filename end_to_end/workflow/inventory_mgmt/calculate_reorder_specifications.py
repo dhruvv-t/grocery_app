@@ -13,7 +13,7 @@ def load_dataset():
     sales = pd.read_csv(paths['sales_pro'])
     products = pd.read_csv(paths['products'])
     sales['sales_date'] = pd.to_datetime(sales['sales_date'])
-    sales['date'] = sales['sales_date'].dt.day
+    sales['date'] = sales['sales_date'].dt.date
     
     return sales, products
 
@@ -136,4 +136,4 @@ def initialize_reorder_level():
     print(f'Saving calculated features in as a CSV file: {paths['reorder_specifics']}') 
     products[['product_id', 'category', 'reorder_level', 'reorder_quantity', 'recalculate_on']].to_csv(paths['reorder_specifics'], index=False)
 
-    return products[['product_id', 'category', 'reorder_level', 'reorder_quantity', 'recalculate_on']], sales[['sales_id', 'product_id', 'quantity', 'sales_date']]
+    return products[['product_id', 'category', 'reorder_level', 'reorder_quantity', 'recalculate_on']], sales
